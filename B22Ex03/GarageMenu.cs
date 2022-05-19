@@ -41,6 +41,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
                         DisplayVehicleInfo();
                         break;
 
+                    case 7:
+                        Output.ExitProgPromt();
+                        Environment.Exit(0);
+                        break;
+
                     default:
                         break;
 
@@ -52,7 +57,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public static void InsertNewVehicle()
         {
             Console.WriteLine("Insert New Vehicle...");
+            
+            foreach (cartype in Garage.r_SupportedVehicles)
             Console.ReadLine();
+            Console.Clear();
 
         }
 
@@ -60,30 +68,35 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             Console.WriteLine("Display License Numbers...");
             Console.ReadLine();
+            Console.Clear();
         }
 
         public static void InflateTires()
         {
             Console.WriteLine("Inflate Tires...");
             Console.ReadLine();
+            Console.Clear();
         }
 
         public static void RefuelVehicle()
         {
             Console.WriteLine("Refuel Vehicle...");
             Console.ReadLine();
+            Console.Clear();
         }
 
         public static void RechargeVehicle()
         {
             Console.WriteLine("Recharge Vehicle...");
             Console.ReadLine();
+            Console.Clear();
         }
 
         public static void DisplayVehicleInfo()
         {
             Console.WriteLine("Display Vehicle Info...");
             Console.ReadLine();
+            Console.Clear();
         }
 
     }
