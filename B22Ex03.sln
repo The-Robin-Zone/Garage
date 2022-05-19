@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B22Ex03", "B22Ex03\B22Ex03.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex03.ConsoleUI", "Ex03.ConsoleUI\Ex03.ConsoleUI.csproj", "{2470F38D-A387-4C06-80B5-0B8397471AA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex03.GarageLogic", "Ex03.GarageLogic\Ex03.GarageLogic.csproj", "{D38860E0-056D-414A-BF1A-8139737123B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
@@ -21,6 +23,10 @@ Global
 		{2470F38D-A387-4C06-80B5-0B8397471AA3}.Debug|anycpu.Build.0 = Debug|anycpu
 		{2470F38D-A387-4C06-80B5-0B8397471AA3}.Release|anycpu.ActiveCfg = Release|anycpu
 		{2470F38D-A387-4C06-80B5-0B8397471AA3}.Release|anycpu.Build.0 = Release|anycpu
+		{D38860E0-056D-414A-BF1A-8139737123B5}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{D38860E0-056D-414A-BF1A-8139737123B5}.Debug|anycpu.Build.0 = Debug|anycpu
+		{D38860E0-056D-414A-BF1A-8139737123B5}.Release|anycpu.ActiveCfg = Release|anycpu
+		{D38860E0-056D-414A-BF1A-8139737123B5}.Release|anycpu.Build.0 = Release|anycpu
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
