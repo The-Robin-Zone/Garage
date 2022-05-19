@@ -20,10 +20,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             this.m_Wheels = new Wheel[i_NumberWheels];
             this.m_Engine = new Engine(i_MaxEnergy);
             this.m_VehicleInfo = new VehicleInfo();
-            //for (int i = 0; i < i_NumberWheels; i++)
-            //{
-            //    this.m_Wheels.Add(new Wheel(i_MaxAirPressure));
-            //}
         }
 
         string ModelName
@@ -79,7 +75,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public List<Wheel> Wheels
+        public Wheel[] Wheels
         {
             get
             {
