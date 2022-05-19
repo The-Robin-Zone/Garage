@@ -16,7 +16,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private int m_EngineVolume;
         private Engine m_TypeEnergy;
         public Motorcycle(string i_LicenseNumber, int i_NumberWheels)
-            : base(i_LicenseNumber, i_NumberWheels, c_MaxAirPressure)
+            : base(i_LicenseNumber, c_MaxAirPressure)
         { 
 
         }

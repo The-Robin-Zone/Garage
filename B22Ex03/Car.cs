@@ -25,7 +25,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private Engine m_TypeEnergy;
 
         public Car(string i_LicenseNumber, int i_NumberWheels)
-            : base(i_LicenseNumber, i_NumberWheels, c_MaxAirPressure)
+            : base(i_LicenseNumber, c_MaxAirPressure)
         {
             
         }
