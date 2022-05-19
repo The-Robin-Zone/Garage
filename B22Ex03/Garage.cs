@@ -20,16 +20,36 @@ namespace B22Ex03Shaked203943253Fanny337957633
         }
 
         //Insert new vehicule to dictionnary,
-        // User will need to add the type of new vehicule 
-        //public insert()
+        public void AddNewVehicule()
+        {
+
+        }
 
         // Search if the license exist in the garage
-        //public search
+        public bool IsVehiculeInGarage(string i_licensedNumber)
+        {
+            bool o_IsVehiculeInGarage = this.m_Garage.ContainsKey(i_licensedNumber);
+            return o_IsVehiculeInGarage;
+        }
 
         // Display list of license number
-        // public
+        public string AllVehiculesInGarage(string vehiculeStatus)
+        {
+            string o_AllVehiculeInGarage = string.Empty;
+            foreach (string licensedNumber in this.m_Garage.Keys)
+            {
+                o_AllVehiculeInGarage += String.Format(" ", licensedNumber);
+            }
+            return o_AllVehiculeInGarage;
+        }
 
-        // Change vehicule status
+        public void UpdateStatus(string i_LicenseNumber, int i_NewStatus)
+        {
+            Vehicle currentVehicule = this.m_Garage[i_LicenseNumber];
+            e_StatusVehicle newStatusVehicle = currentVehicule.VehicleInfo.UpdateStatusVehicule(i_NewStatus);
+            currentVehicule.VehicleInfo.StatusVehicle = newStatusVehicle;
+                    
+        }
 
         //Inflate tires(string i_LicenseNumber)
 

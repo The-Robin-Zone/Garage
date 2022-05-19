@@ -1,20 +1,20 @@
 ﻿using System;
-namespace B22Ex03Shaked203943253Fanny337957633
+namespace B22Ex03
 {
-    enum e_StatusVehicule
+    public enum e_StatusVehicule
     {
         InRepair,
         Repaired,
         PayedFor
     }
 
-    public class CarStatus
+    public class VehicleInfo
     {
         private string m_OwnerName;
         private string m_OwnerPhoneNumber;
         private e_StatusVehicule m_StatusVehicule;
 
-        public CarStatus(string i_OwnerName, string i_OwnerPhoneNumber)
+        public VehicleInfo(string i_OwnerName, string i_OwnerPhoneNumber)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 this.m_StatusVehicule = e_StatusVehicule.InRepair;
             }
             catch (Exception exception)
-            { 
+            {
                 Console.WriteLine(exception);
             }
         }
@@ -49,6 +49,18 @@ namespace B22Ex03Shaked203943253Fanny337957633
             get
             {
                 return this.m_OwnerPhoneNumber;
+            }
+        }
+
+        public e_StatusVehicule StatusVehicule
+        {
+            get
+            {
+                return this.m_StatusVehicule;
+            }
+            set
+            {
+                this.m_StatusVehicule = value;
             }
         }
 
@@ -81,7 +93,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
             return statusVehicule;
         }
-        
+
         // Return the string contain into the enum
         public string StatusVehiculeToString()
         {
@@ -130,5 +142,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
             return o_isOnlyNumber;
         }
+        
     }
 }
