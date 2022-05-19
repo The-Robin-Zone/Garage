@@ -39,6 +39,7 @@
     <Compile Include="Input.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="VehicleInfo.cs" />
+    <Compile Include="SupportedVehicles.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,10 +10,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public Garage()
         {
             this.m_Garage = new Dictionary<string, Vehicle>();
-            this.m_TypeOfVehicleHandle = typeOfVehicleHandle();
+            this.m_TypeOfVehicleHandle = typeOfSupportedVehicle();
         }
 
-        public Dictionary<string, Vehicle> GarageList
+        public Dictionary<string, Vehicle> VehiclesInGarage
         {
             get
             {
@@ -21,7 +21,15 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        private List<Vehicle> typeOfVehicleHandle()
+        public List<Vehicle> TypeOfVehicleHandle
+        {
+            get
+            {
+                return this.m_TypeOfVehicleHandle;
+            }
+        }
+
+        private List<Vehicle> typeOfSupportedVehicle()
         {
             List<Vehicle> o_ListVehicleHandle = new List<Vehicle>();
             //Wheel carWheel = new Wheel("", 0, 31);

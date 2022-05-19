@@ -1,6 +1,12 @@
 ﻿using System;
 namespace B22Ex03Shaked203943253Fanny337957633
 {
+    public enum e_EngineType
+    {
+        Fuel,
+        Electric
+    }
+
     public abstract class Engine
     {
         protected readonly float m_MaxEnergy;
