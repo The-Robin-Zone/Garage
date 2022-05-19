@@ -6,9 +6,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Garage
     {
         private Dictionary<string, Vehicle> m_Garage;
+        private List<Vehicle> m_TypeOfVehicleHandle;
         public Garage()
         {
             this.m_Garage = new Dictionary<string, Vehicle>();
+            this.m_TypeOfVehicleHandle = typeOfVehicleHandle();
         }
 
         public Dictionary<string, Vehicle> GarageList
@@ -19,10 +21,19 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        //Insert new vehicule to dictionnary,
-        public void AddNewVehicule()
+        private List<Vehicle> typeOfVehicleHandle()
         {
+            List<Vehicle> o_ListVehicleHandle = new List<Vehicle>();
+            //Wheel carWheel = new Wheel("", 0, 31);
+            //Car fuelCar = new Car("", "", 0, "", "", 1, );
+            //o_ListVehicleHandle.Add(new Car());
+            return o_ListVehicleHandle;
+        }
 
+        //Insert new vehicule to dictionnary,
+        public void AddNewVehicule(string i_LicensedNumber, Vehicle i_Vehicle)
+        {
+            this.GarageList.Add(i_LicensedNumber, i_Vehicle);
         }
 
         // Search if the license exist in the garage
@@ -48,7 +59,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             Vehicle currentVehicule = this.m_Garage[i_LicenseNumber];
             e_StatusVehicle newStatusVehicle = currentVehicule.VehicleInfo.UpdateStatusVehicule(i_NewStatus);
             currentVehicule.VehicleInfo.StatusVehicule = newStatusVehicle;
-                    
         }
 
         //Inflate tires(string i_LicenseNumber)

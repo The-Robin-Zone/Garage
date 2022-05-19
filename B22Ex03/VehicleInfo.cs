@@ -10,8 +10,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
     public class VehicleInfo
     {
-        private string m_OwnerName;
-        private string m_OwnerPhoneNumber;
+        private readonly string r_OwnerName;
+        private readonly string r_OwnerPhoneNumber;
         private e_StatusVehicle m_StatusVehicule;
 
         public VehicleInfo(string i_OwnerName, string i_OwnerPhoneNumber)
@@ -20,8 +20,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 if (isOnlyLetterOrSpace(i_OwnerName) || isOnlyNumber(i_OwnerPhoneNumber))
                 {
-                    this.m_OwnerName = i_OwnerName;
-                    this.m_OwnerPhoneNumber = i_OwnerPhoneNumber;
+                    this.r_OwnerName = i_OwnerName;
+                    this.r_OwnerPhoneNumber = i_OwnerPhoneNumber;
                 }
                 else
                 {
@@ -40,7 +40,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             get
             {
-                return this.m_OwnerName;
+                return this.r_OwnerName;
             }
         }
 
@@ -48,7 +48,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             get
             {
-                return this.m_OwnerPhoneNumber;
+                return this.r_OwnerPhoneNumber;
             }
         }
 
