@@ -1,7 +1,7 @@
 ﻿using System;
-namespace B22Ex03
+namespace B22Ex03Shaked203943253Fanny337957633
 {
-    public enum e_StatusVehicule
+    public enum e_StatusVehicle
     {
         InRepair,
         Repaired,
@@ -12,7 +12,7 @@ namespace B22Ex03
     {
         private string m_OwnerName;
         private string m_OwnerPhoneNumber;
-        private e_StatusVehicule m_StatusVehicule;
+        private e_StatusVehicle m_StatusVehicule;
 
         public VehicleInfo(string i_OwnerName, string i_OwnerPhoneNumber)
         {
@@ -28,7 +28,7 @@ namespace B22Ex03
                     throw new ArgumentException(string.Format("The name or the number entered is not a legal one"));
                 }
 
-                this.m_StatusVehicule = e_StatusVehicule.InRepair;
+                this.m_StatusVehicule = e_StatusVehicle.InRepair;
             }
             catch (Exception exception)
             {
@@ -52,7 +52,7 @@ namespace B22Ex03
             }
         }
 
-        public e_StatusVehicule StatusVehicule
+        public e_StatusVehicle StatusVehicule
         {
             get
             {
@@ -65,22 +65,22 @@ namespace B22Ex03
         }
 
         // Change the status of the vehicule
-        private e_StatusVehicule updateStatusVehicule(string i_Status)
+        public e_StatusVehicle UpdateStatusVehicule(int i_Status)
         {
-            e_StatusVehicule statusVehicule = e_StatusVehicule.InRepair;
+            e_StatusVehicle statusVehicule = e_StatusVehicle.InRepair;
             try
             {
-                if (i_Status.CompareTo("In Repair") == 0)
+                if (i_Status == 0)
                 {
-                    statusVehicule = e_StatusVehicule.InRepair;
+                    statusVehicule = e_StatusVehicle.InRepair;
                 }
-                else if (i_Status.CompareTo("Repaired") == 0)
+                else if (i_Status == 1)
                 {
-                    statusVehicule = e_StatusVehicule.Repaired;
+                    statusVehicule = e_StatusVehicle.Repaired;
                 }
-                else if (i_Status.CompareTo("Payed for") == 0)
+                else if (i_Status == 2)
                 {
-                    statusVehicule = e_StatusVehicule.PayedFor;
+                    statusVehicule = e_StatusVehicle.PayedFor;
                 }
                 else
                 {
@@ -98,15 +98,15 @@ namespace B22Ex03
         public string StatusVehiculeToString()
         {
             string o_StatusVehiculeToString = string.Empty;
-            if (this.m_StatusVehicule == e_StatusVehicule.InRepair)
+            if (this.m_StatusVehicule == e_StatusVehicle.InRepair)
             {
                 o_StatusVehiculeToString = "In Repair";
             }
-            else if (this.m_StatusVehicule == e_StatusVehicule.Repaired)
+            else if (this.m_StatusVehicule == e_StatusVehicle.Repaired)
             {
                 o_StatusVehiculeToString = "Repaired";
             }
-            else if (this.m_StatusVehicule == e_StatusVehicule.PayedFor)
+            else if (this.m_StatusVehicule == e_StatusVehicle.PayedFor)
             {
                 o_StatusVehiculeToString = "Payed for";
             }

@@ -47,7 +47,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             Vehicle currentVehicule = this.m_Garage[i_LicenseNumber];
             e_StatusVehicle newStatusVehicle = currentVehicule.VehicleInfo.UpdateStatusVehicule(i_NewStatus);
-            currentVehicule.VehicleInfo.StatusVehicle = newStatusVehicle;
+            currentVehicule.VehicleInfo.StatusVehicule = newStatusVehicle;
                     
         }
 
