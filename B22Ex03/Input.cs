@@ -18,9 +18,13 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
                 if (UserInput.Length == 1 && isInputInt)
                 {
-                    isInputIllegal = false;
+                    if (o_UserInput <= 6 && o_UserInput != 0)
+                    {
+                        isInputIllegal = false;
+                    }
                 }
-                else
+
+                if (isInputIllegal)
                 {
                     Output.InvalidInputPrompt();
                 }
