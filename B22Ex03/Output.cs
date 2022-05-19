@@ -1,5 +1,5 @@
 ﻿using System;
-namespace B22Ex03
+namespace B22Ex03Shaked203943253Fanny337957633
 {
     public class Output
     {
@@ -17,6 +17,13 @@ namespace B22Ex03
             Console.WriteLine("you can type \"home\" at every stage to come back to this page.");
             Console.WriteLine();
 
+        }
+
+        public static void InvalidInputPrompt()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Please enter a valid input");
+            Console.WriteLine();
         }
     }
 }

@@ -1,16 +1,90 @@
 ﻿using System;
-using B22Ex03Shaked203943253Fanny337957633;
-
-namespace Ex03.ConsoleUI
+namespace B22Ex03Shaked203943253Fanny337957633
 {
-    public static class GarageMenu
+    internal class GarageMenu
     {
+        Garage m_garage = new Garage();
+        bool inGarageMenue;
 
-        internal static void OpenGarageMenu()
+        public void OpenGarageMenu()
         {
-            Garage garage = new Garage();
+            this.inGarageMenue = true;
 
+            while (inGarageMenue)
+            {
+                Output.MainOptions();
+                int UserChoice = Input.GetHomePageChoice();
+
+                switch (UserChoice)
+                {
+                    case 1:
+                        InsertNewVehicle();
+                        break;
+
+                    case 2:
+                        DisplayLicenseNumbers();
+                        break;
+
+                    case 3:
+                        InflateTires();
+                        break;
+
+                    case 4:
+                        RefuelVehicle();
+                        break;
+
+                    case 5:
+                        RechargeVehicle();
+                        break;
+
+                    case 6:
+                        DisplayVehicleInfo();
+                        break;
+
+                    default:
+                        break;
+
+                }
+            }
 
         }
+
+        public static void InsertNewVehicle()
+        {
+            Console.WriteLine("Insert New Vehicle...");
+            Console.ReadLine();
+
+        }
+
+        public static void DisplayLicenseNumbers()
+        {
+            Console.WriteLine("Display License Numbers...");
+            Console.ReadLine();
+        }
+
+        public static void InflateTires()
+        {
+            Console.WriteLine("Inflate Tires...");
+            Console.ReadLine();
+        }
+
+        public static void RefuelVehicle()
+        {
+            Console.WriteLine("Refuel Vehicle...");
+            Console.ReadLine();
+        }
+
+        public static void RechargeVehicle()
+        {
+            Console.WriteLine("Recharge Vehicle...");
+            Console.ReadLine();
+        }
+
+        public static void DisplayVehicleInfo()
+        {
+            Console.WriteLine("Display Vehicle Info...");
+            Console.ReadLine();
+        }
+
     }
 }
