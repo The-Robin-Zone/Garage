@@ -12,15 +12,12 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Motorcycle : Vehicle
     {
         private const int c_MaxAirPressure = 31;
-        private readonly e_LicenseType r_LicenseType;
-        private readonly int m_EngineVolume;
+        private e_LicenseType m_LicenseType;
+        private int m_EngineVolume;
         private Engine m_TypeEnergy;
-        public Motorcycle(string i_ModelName, string i_LicenseNumber, float i_RemainingEnergy, string i_OwnerName, string i_OwnerPhoneNumber,  int i_LicenseType, int i_EngineVolume, Engine i_TypeEnergy)
-        : base(i_ModelName, i_LicenseNumber, i_RemainingEnergy, i_OwnerName, i_OwnerPhoneNumber)
-        {
-            this.r_LicenseType = (e_LicenseType)i_LicenseType;
-            this.m_EngineVolume = i_EngineVolume;
-            this.m_TypeEnergy = i_TypeEnergy;
+        public Motorcycle(string i_LicenseNumber, int i_NumberWheels)
+            : base(i_LicenseNumber, i_NumberWheels, c_MaxAirPressure)
+        { 
 
         }
 
@@ -28,7 +25,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             get
             {
-                return this.r_LicenseType;
+                return this.m_LicenseType;
+            }
+            set
+            {
+                this.m_LicenseType = value;
             }
         }
 
@@ -38,6 +39,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 return this.m_EngineVolume;
             }
+            set
+            {
+                this.m_EngineVolume = value;
+            }
         }
 
         Engine TypeEnergy
@@ -45,6 +50,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
             get
             {
                 return this.m_TypeEnergy;
+            }
+            set
+            {
+                this.m_TypeEnergy = value;
             }
         }
 

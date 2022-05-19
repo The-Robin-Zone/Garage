@@ -5,13 +5,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
     {
         private const int c_MaxAirPressure = 24;
         private bool m_ContainedCoolCargo;
-        private readonly float r_TankVolume;
-        public Truck(string i_ModelName, string i_LicenseNumber, float i_RemainingEnergy, string i_OwnerName, string i_OwnerPhoneNumber, bool i_ContainedCoolCargo, float i_TankVolume)
-            : base(i_ModelName, i_LicenseNumber, i_RemainingEnergy, i_OwnerName, i_OwnerPhoneNumber)
+        private float m_TankVolume;
+        public Truck(string i_LicenseNumber, int i_NumberWheels)
+            : base(i_LicenseNumber, i_NumberWheels, c_MaxAirPressure)
 
         {
-            this.m_ContainedCoolCargo = i_ContainedCoolCargo;
-            this.r_TankVolume = i_TankVolume;
         }
 
         bool ContainedCoolCargo
@@ -31,6 +29,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
             get
             {
                 return this.TankVolume;
+            }
+            set
+            {
+                this.TankVolume = value;
             }
         }
     }

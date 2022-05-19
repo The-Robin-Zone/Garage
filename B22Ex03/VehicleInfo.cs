@@ -10,37 +10,24 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
     public class VehicleInfo
     {
-        private readonly string r_OwnerName;
-        private readonly string r_OwnerPhoneNumber;
+        private string m_OwnerName;
+        private string m_OwnerPhoneNumber;
         private e_StatusVehicle m_StatusVehicule;
 
-        public VehicleInfo(string i_OwnerName, string i_OwnerPhoneNumber)
+        public VehicleInfo()
         {
-            try
-            {
-                if (isOnlyLetterOrSpace(i_OwnerName) || isOnlyNumber(i_OwnerPhoneNumber))
-                {
-                    this.r_OwnerName = i_OwnerName;
-                    this.r_OwnerPhoneNumber = i_OwnerPhoneNumber;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Format("The name or the number entered is not a legal one"));
-                }
-
-                this.m_StatusVehicule = e_StatusVehicle.InRepair;
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-            }
+            this.m_StatusVehicule = e_StatusVehicle.InRepair;
         }
 
         public string OwnerName
         {
             get
             {
-                return this.r_OwnerName;
+                return this.m_OwnerName;
+            }
+            set
+            {
+                this.m_OwnerName = value;
             }
         }
 
@@ -48,7 +35,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             get
             {
-                return this.r_OwnerPhoneNumber;
+                return this.m_OwnerPhoneNumber;
+            }
+            set
+            {
+                this.m_OwnerPhoneNumber = value;
             }
         }
 

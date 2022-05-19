@@ -3,25 +3,23 @@ namespace B22Ex03Shaked203943253Fanny337957633
 {
     public class Wheel
     {
-        private readonly string r_ManufactureName;
+        private string m_ManufactureName;
         private float m_CurrentAirPressure;
         private readonly float r_MaxAirPressure;
 
 
-        public Wheel(string i_ManufactureName, float i_CurrentAirPressure, float i_MaxAirPressure)
+        public Wheel(float i_MaxAirPressure)
         {
-            if (i_CurrentAirPressure < 0 || i_MaxAirPressure <= 0)
-            {
-                // Throw exception
-            }
+            //if (i_CurrentAirPressure < 0 || i_MaxAirPressure <= 0)
+            //{
+            //    // Throw exception
+            //}
 
-            if (i_CurrentAirPressure > i_MaxAirPressure)
-            {
-                // Throw exception
-            }
+            //if (i_CurrentAirPressure > i_MaxAirPressure)
+            //{
+            //    // Throw exception
+            //}
 
-            this.r_ManufactureName = i_ManufactureName;
-            this.m_CurrentAirPressure = i_CurrentAirPressure;
             this.r_MaxAirPressure = i_MaxAirPressure;
         }
 
@@ -29,7 +27,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             get
             {
-                return this.r_ManufactureName;
+                return this.m_ManufactureName;
+            }
+            set
+            {
+                this.m_ManufactureName = value;
             }
         }
 
