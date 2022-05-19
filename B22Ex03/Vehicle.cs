@@ -10,14 +10,14 @@ namespace B22Ex03Shaked203943253Fanny337957633
         protected string m_LicenseNumber;
         protected float m_RemainingEnergy;
         protected VehicleInfo m_VehicleInfo;
-        protected List<Wheel> m_Wheels;
+        protected Wheel[] m_Wheels;
         protected Engine m_Engine;
 
-        public Vehicle(string i_LicenseNumber, float i_MaxEnergy)
+        public Vehicle(string i_LicenseNumber, float i_MaxEnergy, int i_NumberWheels)
         {
             this.m_LicenseNumber = i_LicenseNumber;
             this.m_VehicleInfo = new VehicleInfo();
-            this.m_Wheels = new List<Wheel>();
+            this.m_Wheels = new Wheel[i_NumberWheels];
             this.m_Engine = new Engine(i_MaxEnergy);
             this.m_VehicleInfo = new VehicleInfo();
             //for (int i = 0; i < i_NumberWheels; i++)

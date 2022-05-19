@@ -20,12 +20,13 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Car : Vehicle
     {
         private const int c_MaxAirPressure = 29;
+        private const int c_NumberWheels = 4;
         private e_ColorVehicle m_colorVehicle;
         private e_NumberOfDoors m_NumberOfDoors;
         private Engine m_TypeEnergy;
 
-        public Car(string i_LicenseNumber, int i_NumberWheels)
-            : base(i_LicenseNumber, c_MaxAirPressure)
+        public Car(string i_LicenseNumber)
+            : base(i_LicenseNumber, c_MaxAirPressure, c_NumberWheels)
         {
             
         }

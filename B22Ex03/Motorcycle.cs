@@ -12,11 +12,12 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Motorcycle : Vehicle
     {
         private const int c_MaxAirPressure = 31;
+        private const int c_NumberWheels = 2;
         private e_LicenseType m_LicenseType;
         private int m_EngineVolume;
         private Engine m_TypeEnergy;
-        public Motorcycle(string i_LicenseNumber, int i_NumberWheels)
-            : base(i_LicenseNumber, c_MaxAirPressure)
+        public Motorcycle(string i_LicenseNumber)
+            : base(i_LicenseNumber, c_MaxAirPressure, c_NumberWheels)
         { 
 
         }

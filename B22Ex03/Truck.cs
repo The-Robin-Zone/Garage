@@ -4,10 +4,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Truck : Vehicle
     {
         private const int c_MaxAirPressure = 24;
+        private const int c_NumberWheels = 16;
         private bool m_ContainedCoolCargo;
         private float m_TankVolume;
-        public Truck(string i_LicenseNumber, int i_NumberWheels)
-            : base(i_LicenseNumber, c_MaxAirPressure)
+        public Truck(string i_LicenseNumber)
+            : base(i_LicenseNumber, c_MaxAirPressure, c_NumberWheels)
 
         {
         }
