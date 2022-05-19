@@ -1,11 +1,11 @@
 ﻿using System;
+ 
 
-
-namespace B22Ex03
+namespace B22Ex03Shaked203943253Fanny337957633
 {
     public static class Factory
     {
-        internal static Vehicle Factory()
+        internal static Vehicle CreateNewVehicle()
         {
             Vehicle newVehicle = null;
 
