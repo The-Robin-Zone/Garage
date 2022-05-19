@@ -58,7 +58,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             Console.WriteLine("Insert New Vehicle...");
             
-            foreach (cartype in Garage.r_SupportedVehicles)
+            foreach (cartype in Garage.m_TypeOfVehicleHandle)
+            {
+
+            }
+
             Console.ReadLine();
             Console.Clear();
 
@@ -67,6 +71,14 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public static void DisplayLicenseNumbers()
         {
             Console.WriteLine("Display License Numbers...");
+            // ask user if he want to see:
+            // 1. all license numbers
+            // 2. in repair
+            // 3. repaired
+            // 4. in repair
+            // 5. payed for
+            // iterate through the hash table and print 
+            // 
             Console.ReadLine();
             Console.Clear();
         }
@@ -74,6 +86,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public static void InflateTires()
         {
             Console.WriteLine("Inflate Tires...");
+            // ask user for a license number
+            // check license number exists
+            // inflate tire if doesnt exceed max psi
             Console.ReadLine();
             Console.Clear();
         }
@@ -81,6 +96,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public static void RefuelVehicle()
         {
             Console.WriteLine("Refuel Vehicle...");
+            // ask user for a license number, fuel type, amount to fill
+            // check license number exists
+            // check fuel match
+            // check amount doesnt exceeds max capacity if yes fill to max
+            // fill
             Console.ReadLine();
             Console.Clear();
         }
@@ -88,6 +108,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public static void RechargeVehicle()
         {
             Console.WriteLine("Recharge Vehicle...");
+            // ask user for a license number and number of minutes to charge
+            // check license number exists
+            // check amount of minutes dont exceeds max capacity, if yes than charge max
             Console.ReadLine();
             Console.Clear();
         }
@@ -95,6 +118,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public static void DisplayVehicleInfo()
         {
             Console.WriteLine("Display Vehicle Info...");
+            // iterate through the hash map and call ToSting method on each vehicle
             Console.ReadLine();
             Console.Clear();
         }

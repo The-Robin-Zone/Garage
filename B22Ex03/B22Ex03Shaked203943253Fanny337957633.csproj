@@ -39,7 +39,11 @@
     <Compile Include="Input.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="VehicleInfo.cs" />
+<<<<<<< Updated upstream
     <Compile Include="SupportedVehicles.cs" />
+=======
+    <Compile Include="Factory.cs" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
