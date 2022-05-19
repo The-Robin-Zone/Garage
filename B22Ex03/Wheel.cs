@@ -8,7 +8,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private readonly float r_MaxAirPressure;
 
 
-        public Wheel(float i_MaxAirPressure)
+        public Wheel(string i_ManufactureName, float i_MaxAirPressure)
         {
             //if (i_CurrentAirPressure < 0 || i_MaxAirPressure <= 0)
             //{
@@ -20,6 +20,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             //    // Throw exception
             //}
 
+            this.m_ManufactureName = i_ManufactureName;
             this.r_MaxAirPressure = i_MaxAirPressure;
         }
 
