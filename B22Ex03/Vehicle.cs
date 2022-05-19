@@ -66,5 +66,21 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 this.m_VehicleInfo = value;
             }
         }
+
+        public List<Wheel> Wheels
+        {
+            get
+            {
+                return this.m_Wheels;
+            }
+        }
+
+        public void Inflate(float i_NbrAirToAdd)
+        {
+            foreach(Wheel wheel in this.m_Wheels)
+            {
+                wheel.CurrentAirPressure += i_NbrAirToAdd;
+            }
+        }
     }
 }

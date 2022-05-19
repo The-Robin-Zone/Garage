@@ -11,5 +11,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         }
 
+        public void Recharge(float i_NbrHoursToAdd)
+        {
+            base.m_CurrentEnergy += i_NbrHoursToAdd;
+        }
     }
 }

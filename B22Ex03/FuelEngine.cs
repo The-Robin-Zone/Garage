@@ -32,5 +32,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 this.m_FuelType = value;
             }
         }
+
+        public void Refuel(float i_NbrFuelToAdd)
+        {
+            base.m_CurrentEnergy += i_NbrFuelToAdd;
+        }
     }
 }

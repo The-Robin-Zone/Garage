@@ -54,11 +54,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         }
 
-        public static void InsertNewVehicle()
+        public void InsertNewVehicle()
         {
             Console.WriteLine("Insert New Vehicle...");
             
-            foreach (cartype in Garage.m_TypeOfVehicleHandle)
+            foreach (SupportedVehicles cartype in this.m_garage.TypeOfVehicleHandle)
             {
 
             }

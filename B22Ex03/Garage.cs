@@ -70,9 +70,15 @@ namespace B22Ex03Shaked203943253Fanny337957633
             currentVehicule.VehicleInfo.StatusVehicule = newStatusVehicle;
         }
 
-        //Inflate tires(string i_LicenseNumber)
+        public void InflateWheels(string i_LicenseNumber, float i_NbrAirToAdd)
+        {
+            this.m_Garage[i_LicenseNumber].Inflate(i_NbrAirToAdd);
+        }
 
-        // Refuel(string i_LicensedNumber, Fuel Type, ampount to fill)
+        public void Refuel(string i_LicensedNumber, e_FuelType i_FuelType, float i_AmountToFill)
+        {
+            this.m_Garage[i_LicenseNumber].Engin
+        }
 
         // Recharge(string i_LicensedNumber, umber of minutes to recharge)
 
