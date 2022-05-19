@@ -6,7 +6,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
     {
 
         // Electric engine constructor
-        internal ElectricEngine(float i_MaxEnergy, float i_CurrentEnergy) : base(i_MaxEnergy, i_CurrentEnergy)
+        internal ElectricEngine(float i_MaxEnergy, float i_CurrentEnergy) : base(i_MaxEnergy)
         {
 
         }

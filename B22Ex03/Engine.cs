@@ -7,26 +7,24 @@ namespace B22Ex03Shaked203943253Fanny337957633
         Electric
     }
 
-    public abstract class Engine
+    public class Engine
     {
-        protected readonly float m_MaxEnergy;
+        protected float m_MaxEnergy;
         protected float m_CurrentEnergy;
 
-        public Engine(float i_MaxEnergy, float i_CurrentEnergy)
+        public Engine(float i_MaxEnergy)
         {
-            if (i_MaxEnergy <= 0 || i_CurrentEnergy < 0)
+            if (i_MaxEnergy <= 0)
             {
                 // Throw exception
             }
 
-            if (i_MaxEnergy < i_CurrentEnergy)
-            {
-                // Throw exception
-            }
+            //if (i_MaxEnergy < i_CurrentEnergy)
+            //{
+            //    // Throw exception
+            //}
 
-            this.m_MaxEnergy = i_MaxEnergy;
-            this.m_CurrentEnergy = i_CurrentEnergy;
-            
+            this.m_MaxEnergy = i_MaxEnergy;            
         }
 
         public float MaxEnergy
