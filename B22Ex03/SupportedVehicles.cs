@@ -11,14 +11,12 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class SupportedVehicles
     {
         private e_VehicleType m_VehicleType;
-        private int m_NumberWheels;
-        private e_FuelType m_FuelType;
         private e_EngineType m_EngineType;
-        private float m_MaxAirPressure;
-        private float m_MaxEnergyCapacity;
 
-        public SupportedVehicles()
+        public SupportedVehicles(e_VehicleType i_VehicleType, e_EngineType i_EngineType)
         {
+            this.m_VehicleType = i_VehicleType;
+            this.m_EngineType = i_EngineType;
         }
     }
 }

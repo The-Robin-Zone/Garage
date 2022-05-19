@@ -1,7 +1,7 @@
 ﻿using System;
 namespace B22Ex03Shaked203943253Fanny337957633
 {
-    enum e_FuelType
+    public enum e_FuelType
     {
         Soler = 0,
         Octane95 = 1,

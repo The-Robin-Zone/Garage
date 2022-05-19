@@ -6,11 +6,12 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Garage
     {
         private Dictionary<string, Vehicle> m_Garage;
-        private List<Vehicle> m_TypeOfVehicleHandle;
+        private List<SupportedVehicles> m_TypeOfVehicleHandle;
         public Garage()
         {
             this.m_Garage = new Dictionary<string, Vehicle>();
-            this.m_TypeOfVehicleHandle = typeOfSupportedVehicle();
+            this.m_TypeOfVehicleHandle = new List<SupportedVehicles>();
+            typeOfSupportedVehicle();
         }
 
         public Dictionary<string, Vehicle> VehiclesInGarage
@@ -21,7 +22,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public List<Vehicle> TypeOfVehicleHandle
+        public List<SupportedVehicles> TypeOfVehicleHandle
         {
             get
             {
@@ -29,19 +30,19 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        private List<Vehicle> typeOfSupportedVehicle()
+        private void typeOfSupportedVehicle()
         {
-            List<Vehicle> o_ListVehicleHandle = new List<Vehicle>();
-            //Wheel carWheel = new Wheel("", 0, 31);
-            //Car fuelCar = new Car("", "", 0, "", "", 1, );
-            //o_ListVehicleHandle.Add(new Car());
-            return o_ListVehicleHandle;
+            m_TypeOfVehicleHandle.Add(new SupportedVehicles(e_VehicleType.Motorcycle, e_EngineType.Fuel));
+            m_TypeOfVehicleHandle.Add(new SupportedVehicles(e_VehicleType.Motorcycle,  e_EngineType.Electric));
+            m_TypeOfVehicleHandle.Add(new SupportedVehicles(e_VehicleType.Car, e_EngineType.Fuel));
+            m_TypeOfVehicleHandle.Add(new SupportedVehicles(e_VehicleType.Car, e_EngineType.Electric));
+            m_TypeOfVehicleHandle.Add(new SupportedVehicles(e_VehicleType.Truck, e_EngineType.Fuel));
         }
 
         //Insert new vehicule to dictionnary,
         public void AddNewVehicule(string i_LicensedNumber, Vehicle i_Vehicle)
         {
-            this.GarageList.Add(i_LicensedNumber, i_Vehicle);
+            this.m_Garage.Add(i_LicensedNumber, i_Vehicle);
         }
 
         // Search if the license exist in the garage
