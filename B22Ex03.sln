@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.810.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B22Ex03", "B22Ex03\B22Ex03.csproj", "{B14E2042-53A0-4C8F-BE9E-555BC93904E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex03.ConsoleUI", "Ex03.ConsoleUI\Ex03.ConsoleUI.csproj", "{2470F38D-A387-4C06-80B5-0B8397471AA3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex03.GarageLogic", "Ex03.GarageLogic\Ex03.GarageLogic.csproj", "{D38860E0-056D-414A-BF1A-8139737123B5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
@@ -19,14 +15,6 @@ Global
 		{B14E2042-53A0-4C8F-BE9E-555BC93904E1}.Debug|anycpu.Build.0 = Debug|anycpu
 		{B14E2042-53A0-4C8F-BE9E-555BC93904E1}.Release|anycpu.ActiveCfg = Release|anycpu
 		{B14E2042-53A0-4C8F-BE9E-555BC93904E1}.Release|anycpu.Build.0 = Release|anycpu
-		{2470F38D-A387-4C06-80B5-0B8397471AA3}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{2470F38D-A387-4C06-80B5-0B8397471AA3}.Debug|anycpu.Build.0 = Debug|anycpu
-		{2470F38D-A387-4C06-80B5-0B8397471AA3}.Release|anycpu.ActiveCfg = Release|anycpu
-		{2470F38D-A387-4C06-80B5-0B8397471AA3}.Release|anycpu.Build.0 = Release|anycpu
-		{D38860E0-056D-414A-BF1A-8139737123B5}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{D38860E0-056D-414A-BF1A-8139737123B5}.Debug|anycpu.Build.0 = Debug|anycpu
-		{D38860E0-056D-414A-BF1A-8139737123B5}.Release|anycpu.ActiveCfg = Release|anycpu
-		{D38860E0-056D-414A-BF1A-8139737123B5}.Release|anycpu.Build.0 = Release|anycpu
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

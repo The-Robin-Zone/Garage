@@ -24,5 +24,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="GarageMenu.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="FuelEngine.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="ElectricEngine.cs" />
+    <Compile Include="CarStatus.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Garage.cs" />
+    <Compile Include="Motorcycle.cs" />
+    <Compile Include="Truck.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="Wheel.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
