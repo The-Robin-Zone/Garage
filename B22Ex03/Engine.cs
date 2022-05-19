@@ -26,6 +26,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
             this.m_MaxEnergy = i_MaxEnergy;
             this.m_CurrentEnergy = i_CurrentEnergy;
+            
         }
 
         public float MaxEnergy

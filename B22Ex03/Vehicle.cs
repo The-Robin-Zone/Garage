@@ -11,6 +11,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         protected float m_RemainingEnergy;
         protected VehicleInfo m_VehicleInfo;
         protected List<Wheel> m_Wheels;
+        protected Engine m_Engine;
 
         public Vehicle(string i_LicenseNumber, int i_NumberWheels, float i_MaxAirPressure)
         {
@@ -41,17 +42,15 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 return this.r_LicenseNumber;
             }
+
         }
 
         float RemainingEnergy
         {
             get
             {
+                SetRemainingEnergy();
                 return this.m_RemainingEnergy;
-            }
-            set
-            {
-                this.m_RemainingEnergy = value;
             }
         }
 
@@ -67,12 +66,26 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
+        public Engine TypeEngine
+        {
+            get
+            {
+                return this.m_Engine;
+            }
+        }
+
         public List<Wheel> Wheels
         {
             get
             {
                 return this.m_Wheels;
             }
+        }
+
+        // Determine the remaining energy
+        public void SetRemainingEnergy()
+        {
+            this.m_RemainingEnergy = this.m_Engine.CurrentEnergy / this.m_Engine.MaxEnergy * 100;
         }
 
         public void Inflate(float i_NbrAirToAdd)
