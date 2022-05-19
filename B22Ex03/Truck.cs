@@ -28,11 +28,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             get
             {
-                return this.TankVolume;
+                return this.m_TankVolume;
             }
             set
             {
-                this.TankVolume = value;
+                this.m_TankVolume = value;
             }
         }
     }

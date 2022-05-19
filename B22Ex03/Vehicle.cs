@@ -7,7 +7,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Vehicle
     {
         protected string m_ModelName;
-        protected readonly string r_LicenseNumber;
+        protected string m_LicenseNumber;
         protected float m_RemainingEnergy;
         protected VehicleInfo m_VehicleInfo;
         protected List<Wheel> m_Wheels;
@@ -15,7 +15,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public Vehicle(string i_LicenseNumber, int i_NumberWheels, float i_MaxAirPressure)
         {
-            this.r_LicenseNumber = i_LicenseNumber;
+            this.m_LicenseNumber = i_LicenseNumber;
             this.m_VehicleInfo = new VehicleInfo();
             this.m_Wheels = new List<Wheel>();
             //for (int i = 0; i < i_NumberWheels; i++)
@@ -40,9 +40,12 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             get
             {
-                return this.r_LicenseNumber;
+                return this.m_LicenseNumber;
             }
-
+            set
+            {
+                this.m_LicenseNumber = value;
+            }
         }
 
         float RemainingEnergy
@@ -88,6 +91,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             this.m_RemainingEnergy = this.m_Engine.CurrentEnergy / this.m_Engine.MaxEnergy * 100;
         }
 
+        // Inflate all tires
         public void Inflate(float i_NbrAirToAdd)
         {
             foreach(Wheel wheel in this.m_Wheels)
