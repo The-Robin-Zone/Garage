@@ -59,12 +59,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
             string userLicenseNumber = string.Empty;
             int userVehicleChoice;
             Vehicle newVehicle = null;
-            e_VehicleType vehicleType;
-            e_EngineType engineType;
             int i = 1;
 
             // Prints available vehicle types
-            Console.WriteLine("These are the avilable types");
+            Console.WriteLine("These are the available types");
             foreach (SupportedVehicles cartype in this.m_garage.TypeOfVehicleHandle)
             {
                 Console.Write(i + ") ");
@@ -80,19 +78,20 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 Console.WriteLine("Vehicle is already in the Garage, Chaning status to \"In-Repair\"...");
                 m_garage.UpdateStatus(userLicenseNumber, 1);
+                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("Which vehicle would you like to make?");
                 userVehicleChoice = Input.GetUserOption(this.m_garage.TypeOfVehicleHandle.Count);
 
+                newVehicle = Factory.CreateNewVehicle(userLicenseNumber,
+                    this.m_garage.TypeOfVehicleHandle[userVehicleChoice - 1].VehicleType,
+                    this.m_garage.TypeOfVehicleHandle[userVehicleChoice - 1].EngineType);
 
-                vehicleType = this.m_garage.TypeOfVehicleHandle[userVehicleChoice].VehicleType;
-                engineType = this.m_garage.TypeOfVehicleHandle[userVehicleChoice].EngineType;
-
-
-                newVehicle = Factory.CreateNewVehicle(userLicenseNumber, vehicleType, engineType, null);
-
+                this.m_garage.AddNewVehicule(userLicenseNumber, newVehicle);
+                Console.WriteLine("The vehicle was succesfully added to the Garge!");
+                Console.WriteLine();
                 Console.WriteLine(newVehicle);
                 Console.ReadLine();
             }

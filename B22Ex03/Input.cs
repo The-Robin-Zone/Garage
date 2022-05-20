@@ -17,7 +17,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
                 if (UserInput.Length == 1 && isInputInt)
                 {
-                    if (o_UserInput <= i_MaxValue && o_UserInput != 0)
+                    if (o_UserInput <= i_MaxValue+1 && o_UserInput != 0)
                     {
                         isInputIllegal = false;
                     }

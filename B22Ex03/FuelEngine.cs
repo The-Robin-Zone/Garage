@@ -14,9 +14,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private e_FuelType m_FuelType;
 
         // Gas engine constructor
-        internal FuelEngine(e_FuelType i_FuelType) : base()
+        internal FuelEngine() : base()
         {
-            this.m_FuelType = i_FuelType;
         }
 
         public e_FuelType FuelType

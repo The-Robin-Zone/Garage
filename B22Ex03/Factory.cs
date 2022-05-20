@@ -7,11 +7,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public static class Factory
     {
         internal static Vehicle CreateNewVehicle(string i_LicenseNumber,
-            e_VehicleType i_VehicleType, e_EngineType i_EngineType, e_FuelType? i_FuelType)
+            e_VehicleType i_VehicleType, e_EngineType i_EngineType)
         {
 
             Vehicle newVehicle = null;
-            Engine newEngine = CreateEngine(i_EngineType, i_FuelType);
+            Engine newEngine = CreateEngine(i_EngineType);
 
 
             switch (i_VehicleType)
@@ -32,14 +32,14 @@ namespace B22Ex03Shaked203943253Fanny337957633
             return newVehicle;
         }
 
-        private static Engine CreateEngine(e_EngineType i_EngineType, e_FuelType? i_FuelType)
+        private static Engine CreateEngine(e_EngineType i_EngineType)
         {
             Engine newEngine = null;
 
             switch (i_EngineType)
             {
                 case e_EngineType.Fuel:
-                    newEngine = new FuelEngine((e_FuelType)i_FuelType);
+                    newEngine = new FuelEngine();
                     break;
 
                 case e_EngineType.Electric:
