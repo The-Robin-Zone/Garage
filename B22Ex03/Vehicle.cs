@@ -8,7 +8,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
     {
         protected string m_ModelName;
         protected string m_LicenseNumber;
-        protected float m_RemainingEnergy;
         protected VehicleInfo m_VehicleInfo;
         protected Wheel[] m_Wheels;
         protected Engine m_Engine;
@@ -46,15 +45,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public float RemainingEnergy
-        {
-            get
-            {
-                SetRemainingEnergy();
-                return this.m_RemainingEnergy;
-            }
-        }
-
         public VehicleInfo VehicleInfo
         {
             get
@@ -67,7 +57,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public Engine TypeEngine
+        public Engine Engine
         {
             get
             {
@@ -81,12 +71,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 return this.m_Wheels;
             }
-        }
-
-        // Determine the remaining energy
-        public void SetRemainingEnergy()
-        {
-            this.m_RemainingEnergy = this.m_Engine.CurrentEnergy / this.m_Engine.MaxEnergy * 100;
         }
 
         // Inflate all tires
@@ -118,8 +102,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string o_VehicleDetails = string.Format("Vehicle Details:\nModel Name: {0}, License Number: {1}, Remaining Energy: {2}\n{3}\n{4} ",
-                 m_ModelName, m_LicenseNumber, m_RemainingEnergy, this.m_VehicleInfo.ToString(), this.m_Wheels[0].ToString(), this.m_Engine.ToString());
+            string o_VehicleDetails = string.Format("Vehicle Details:\nModel Name: {0}, License Number: {1}\n{2}\n{3}, \nEngine Details: \n{4} ",
+                 m_ModelName, m_LicenseNumber, this.m_VehicleInfo.ToString(), this.m_Wheels[0].ToString(), this.m_Engine.ToString());
 
             return o_VehicleDetails;
         }

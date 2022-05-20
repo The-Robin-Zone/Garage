@@ -18,9 +18,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string electricEngineDetails = "electricEngineDetails";
 
-            return electricEngineDetails;
+            return string.Format(base.ToString() + "Max Battery: {0} hours, Current Battery: {1} hours ", base.MaxEnergy, base.CurrentEnergy);
         }
 
     }

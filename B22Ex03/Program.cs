@@ -32,6 +32,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
             shaked.SetWheelsManufacture("Fanny wheels inc.");
             shaked.SetWheelsPSI(30);
 
+            shaked.Engine.CurrentEnergy = 10;
+        
+
             Console.WriteLine(shaked.ToString());
 
 

@@ -35,6 +35,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private static Engine CreateEngine(e_EngineType i_EngineType, e_FuelType? i_FuelType)
         {
             Engine newEngine = null;
+
             switch (i_EngineType)
             {
                 case e_EngineType.Fuel:

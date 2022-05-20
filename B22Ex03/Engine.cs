@@ -36,14 +36,22 @@ namespace B22Ex03Shaked203943253Fanny337957633
             set
             {
                 this.m_CurrentEnergy = value;
+                this.m_EnergyLeftPrcentage = this.m_CurrentEnergy / this.m_MaxEnergy * 100;
             }
+        }
+
+        public float EnergyLeftPrcentage
+        {
+            get
+            {
+                return this.m_EnergyLeftPrcentage;
+            }
+            
         }
 
         public override string ToString()
         {
-            string EngineDetails = string.Format("Engine:\nMax Energy: {0} Current Energy: {1}", m_MaxEnergy, m_CurrentEnergy);
-
-            return EngineDetails;
+            return string.Format("Energy Left Prcentage: {0}", m_EnergyLeftPrcentage);
         }
     }
 }

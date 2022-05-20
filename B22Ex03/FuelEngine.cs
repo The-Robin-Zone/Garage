@@ -39,9 +39,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string fuelEngineDetails = "fuelEngineDetails";
-
-            return fuelEngineDetails;
+            return string.Format(base.ToString() + ", Fuel type: {0}, Max Fuel: {1} liters, Current Fuel: {2} liters ",
+                m_FuelType.ToString(), base.MaxEnergy, base.CurrentEnergy);
         }
     }
 }
