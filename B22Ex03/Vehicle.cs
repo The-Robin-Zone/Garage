@@ -12,7 +12,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         protected Wheel[] m_Wheels;
         protected Engine m_Engine;
 
-        public Vehicle(string i_LicenseNumber, Engine i_engine, float i_MaxAirPressure, int i_NumberWheels, float i_MaxFuelTank, float? i_MaxBatteryLife)
+        public Vehicle(string i_LicenseNumber, Engine i_engine, float i_MaxAirPressure, int i_NumberWheels, float i_MaxFuelTank, float? i_MaxBatteryLife, e_FuelType i_FuelType)
         {
             this.m_LicenseNumber = i_LicenseNumber;
             this.m_VehicleInfo = new VehicleInfo();
@@ -21,6 +21,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             if (this.m_Engine is FuelEngine)
             {
                 this.m_Engine.MaxEnergy = i_MaxFuelTank;
+                (this.m_Engine as FuelEngine).FuelType = i_FuelType;
             } else
             {
                 this.m_Engine.MaxEnergy = (float)i_MaxBatteryLife;

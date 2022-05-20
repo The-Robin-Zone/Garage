@@ -6,9 +6,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private const int c_MaxAirPressure = 24;
         private const int c_NumberWheels = 16;
         private const float c_MaxFuelTank = 120F;
+        private const e_FuelType c_FuelType = e_FuelType.Soler;
         private bool m_ContainedCoolCargo;
         private float m_TankVolume;
-        public Truck(string i_LicenseNumber, Engine i_Engine) : base(i_LicenseNumber, i_Engine, c_MaxAirPressure, c_NumberWheels, c_MaxFuelTank, null)
+        public Truck(string i_LicenseNumber, Engine i_Engine) : base(i_LicenseNumber, i_Engine, c_MaxAirPressure, c_NumberWheels, c_MaxFuelTank, null, c_FuelType)
 
         {
 

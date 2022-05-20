@@ -13,11 +13,12 @@ namespace B22Ex03Shaked203943253Fanny337957633
     {
         private const int c_MaxAirPressure = 31;
         private const int c_NumberWheels = 2;
-        private const float c_MaxFuelTank = 38F;
-        private const float c_MaxBatteryLife = 3.3F;
+        private const float c_MaxFuelTank = 6.2F;
+        private const float c_MaxBatteryLife = 2.5F;
+        private const e_FuelType c_FuelType = e_FuelType.Octane98;
         private e_LicenseType m_LicenseType;
         private int m_EngineVolume;
-        public Motorcycle(string i_LicenseNumber, Engine i_Engine) : base(i_LicenseNumber, i_Engine, c_MaxAirPressure, c_NumberWheels, c_MaxFuelTank, c_MaxBatteryLife)
+        public Motorcycle(string i_LicenseNumber, Engine i_Engine) : base(i_LicenseNumber, i_Engine, c_MaxAirPressure, c_NumberWheels, c_MaxFuelTank, c_MaxBatteryLife, c_FuelType)
         { 
 
         }
