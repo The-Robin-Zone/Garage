@@ -13,13 +13,17 @@ namespace B22Ex03Shaked203943253Fanny337957633
         protected Wheel[] m_Wheels;
         protected Engine m_Engine;
 
-        public Vehicle(string i_LicenseNumber, float i_MaxEnergy, int i_NumberWheels)
+        public Vehicle(string i_LicenseNumber, float i_MaxAirPressure, int i_NumberWheels)
         {
             this.m_LicenseNumber = i_LicenseNumber;
             this.m_VehicleInfo = new VehicleInfo();
             this.m_Wheels = new Wheel[i_NumberWheels];
-            this.m_Engine = new Engine(i_MaxEnergy);
+            //this.m_Engine = new Engine(i_MaxEnergy);
             this.m_VehicleInfo = new VehicleInfo();
+            for (int i = 0; i < i_NumberWheels; i++)
+            {
+                this.m_Wheels[i] = new Wheel(i_MaxAirPressure);
+            }
         }
 
         string ModelName
@@ -95,6 +99,16 @@ namespace B22Ex03Shaked203943253Fanny337957633
             foreach(Wheel wheel in this.m_Wheels)
             {
                 wheel.CurrentAirPressure += i_NbrAirToAdd;
+            }
+        }
+
+        // Give the info about each wheels
+        public void SetWheelsInfo(string i_ManufactureName, float i_CurrentAirPressure)
+        {
+            for (int i = 0; i < this.m_Wheels.Length; i++)
+            {
+                this.m_Wheels[i].ManufactureName = i_ManufactureName;
+                this.m_Wheels[i].CurrentAirPressure = i_CurrentAirPressure;
             }
         }
     }

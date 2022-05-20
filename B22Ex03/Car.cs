@@ -25,10 +25,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private e_NumberOfDoors m_NumberOfDoors;
         private Engine m_TypeEnergy;
 
-        public Car(string i_LicenseNumber)
-            : base(i_LicenseNumber, c_MaxAirPressure, c_NumberWheels)
-        {
-            
+        public Car(string i_LicenseNumber) : base(i_LicenseNumber, c_MaxAirPressure, c_NumberWheels)
+        {  
         }
 
         e_ColorVehicle ColorVehicle
