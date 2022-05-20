@@ -17,7 +17,24 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
             Vehicle shaked = Factory.CreateNewVehicle(i_LicenseNumber, i_VehicleType, i_EngineType, i_FuelType);
 
+            
             Console.WriteLine(shaked.ToString());
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            shaked.ModelName = "Ferari";
+            shaked.VehicleInfo.StatusVehicule = e_StatusVehicle.Repaired;
+            shaked.VehicleInfo.OwnerPhoneNumber = "0542008871";
+            shaked.VehicleInfo.OwnerName = "Shaked";
+            shaked.SetWheelsManufacture("Fanny wheels inc.");
+            shaked.SetWheelsPSI(30);
+
+            Console.WriteLine(shaked.ToString());
+
+
         }
     }
 }

@@ -41,8 +41,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string EngineDetails = string.Format("Engine:\nMax Energy: {0} Current Energy: {1}, Energy Left Prcentage: {2}",
-                m_MaxEnergy, m_CurrentEnergy, m_EnergyLeftPrcentage);
+            string EngineDetails = string.Format("Engine:\nMax Energy: {0} Current Energy: {1}", m_MaxEnergy, m_CurrentEnergy);
 
             return EngineDetails;
         }

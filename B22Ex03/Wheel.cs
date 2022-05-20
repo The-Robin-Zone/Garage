@@ -63,7 +63,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string WheelDetails = string.Format("Wheel Detail:\nManufacture Name: {0}, Current Air Pressure: {1} Max Air Pressure: {2}",
+            string WheelDetails = string.Format("Wheel Detail:\nManufacture Name: {0}, Current Air Pressure: {1}, Max Air Pressure: {2}",
                 m_ManufactureName, m_CurrentAirPressure, r_MaxAirPressure);
 
             return WheelDetails;

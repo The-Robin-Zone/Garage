@@ -136,7 +136,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string o_VehicleStatusDetails = string.Format("Wheel Detail:\nOwner Name: {0}, Owner phone number: {1} Status vehicle: {2}",
+            string o_VehicleStatusDetails = string.Format("Vehicle info:\nOwner Name: {0}, Owner phone number: {1}, Vehicle Status: {2}",
                 m_OwnerName, m_OwnerPhoneNumber, StatusVehiculeToString());
 
             return o_VehicleStatusDetails;

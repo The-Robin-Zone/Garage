@@ -26,7 +26,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        string ModelName
+        public string ModelName
         {
             get
             {
@@ -38,19 +38,15 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        string LicenseNumber
+        public string LicenseNumber
         {
             get
             {
                 return this.m_LicenseNumber;
             }
-            set
-            {
-                this.m_LicenseNumber = value;
-            }
         }
 
-        float RemainingEnergy
+        public float RemainingEnergy
         {
             get
             {
@@ -102,19 +98,27 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        // Give the info about each wheels
-        public void SetWheelsInfo(string i_ManufactureName, float i_CurrentAirPressure)
+        // set the Manufacturer for each wheel
+        public void SetWheelsManufacture(string i_ManufactureName)
         {
             for (int i = 0; i < this.m_Wheels.Length; i++)
             {
                 this.m_Wheels[i].ManufactureName = i_ManufactureName;
+            }
+        }
+
+        // set the PSI for each wheel
+        public void SetWheelsPSI(float i_CurrentAirPressure)
+        {
+            for (int i = 0; i < this.m_Wheels.Length; i++)
+            {
                 this.m_Wheels[i].CurrentAirPressure = i_CurrentAirPressure;
             }
         }
 
         public override string ToString()
         {
-            string o_VehicleDetails = string.Format("Vehicle Detail:\n Model Name: {0}, License Number: {1} Remaining Energy: {2} {3} {4} ",
+            string o_VehicleDetails = string.Format("Vehicle Details:\nModel Name: {0}, License Number: {1}, Remaining Energy: {2}\n{3}\n{4} ",
                  m_ModelName, m_LicenseNumber, m_RemainingEnergy, this.m_VehicleInfo.ToString(), this.m_Wheels[0].ToString(), this.m_Engine.ToString());
 
             return o_VehicleDetails;
