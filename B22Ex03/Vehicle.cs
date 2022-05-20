@@ -111,5 +111,13 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 this.m_Wheels[i].CurrentAirPressure = i_CurrentAirPressure;
             }
         }
+
+        public override string ToString()
+        {
+            string o_VehicleDetails = string.Format("Vehicle Detail:\n Model Name: {0}, License Number: {1} Remaining Energy: {2} {3} {4} ",
+                 m_ModelName, m_LicenseNumber, m_RemainingEnergy, this.m_VehicleInfo.ToString(), this.m_Wheels[0].ToString(), this.m_Engine.ToString());
+
+            return o_VehicleDetails;
+        }
     }
 }

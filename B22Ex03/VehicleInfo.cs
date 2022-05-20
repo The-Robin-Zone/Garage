@@ -133,6 +133,13 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
             return o_isOnlyNumber;
         }
-        
+
+        public override string ToString()
+        {
+            string o_VehicleStatusDetails = string.Format("Wheel Detail:\nOwner Name: {0}, Owner phone number: {1} Status vehicle: {2}",
+                m_OwnerName, m_OwnerPhoneNumber, StatusVehiculeToString());
+
+            return o_VehicleStatusDetails;
+        }
     }
 }
