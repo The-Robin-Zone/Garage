@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace B22Ex03Shaked203943253Fanny337957633
@@ -7,11 +6,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Garage
     {
         private Dictionary<string, Vehicle> m_Garage;
-        private ArrayList m_TypeOfVehicleHandle;
+        private List<SupportedVehicles> m_TypeOfVehicleHandle;
         public Garage()
         {
             this.m_Garage = new Dictionary<string, Vehicle>();
-            this.m_TypeOfVehicleHandle = new ArrayList();
+            this.m_TypeOfVehicleHandle = new List<SupportedVehicles>();
             typeOfSupportedVehicle();
         }
 
@@ -23,7 +22,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public ArrayList TypeOfVehicleHandle
+        public List<SupportedVehicles> TypeOfVehicleHandle
         {
             get
             {
