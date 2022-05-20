@@ -44,7 +44,16 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
             set
             {
-                this.m_CurrentAirPressure = value;
+                if (value < 0 || (value > r_MaxAirPressure))
+                {
+
+                    throw new ValueOutOfRangeException(r_MaxAirPressure, 0);
+                }
+                else
+                {
+                    this.m_CurrentAirPressure = value;
+                }
+                
             }
         }
 

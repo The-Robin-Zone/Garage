@@ -53,12 +53,16 @@ namespace B22Ex03Shaked203943253Fanny337957633
         }
 
         // Display list of license number
-        public string AllVehiculesInGarage(string vehiculeStatus)
+        public string AllVehiculesInGarage(e_StatusVehicle i_vehiculeStatus)
         {
             string o_AllVehiculeInGarage = string.Empty;
             foreach (string licensedNumber in this.m_Garage.Keys)
             {
-                o_AllVehiculeInGarage += String.Format(" ", licensedNumber);
+                if (this.m_Garage[licensedNumber].VehicleInfo.StatusVehicule == i_vehiculeStatus)
+                {
+
+                }
+                o_AllVehiculeInGarage += String.Format("{0}\n", licensedNumber);
             }
             return o_AllVehiculeInGarage;
         }
