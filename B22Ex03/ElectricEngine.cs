@@ -15,5 +15,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             base.m_CurrentEnergy += i_NbrHoursToAdd;
         }
+
     }
 }

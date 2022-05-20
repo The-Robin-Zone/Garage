@@ -48,5 +48,13 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 this.m_CurrentEnergy = value;
             }
         }
+
+        public override string ToString()
+        {
+            string EngineDetails = string.Format("Engine:\nManufacture Name: {0}, Current Air Pressure: {1} Max Air Pressure: {1}",
+                e_EngineType, m_MaxEnergy, m_CurrentEnergy);
+
+            return EngineDetails;
+        }
     }
 }
