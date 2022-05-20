@@ -12,7 +12,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
             Vehicle newVehicle = null;
             Engine engine = CreateEngine(i_EngineType, i_FuelType, i_MaxEnergy, i_CurrentEnergyCapcity);
-            Wheel wheel = new Wheel(i_WheelManufactor, i_MaxAirPressure);
+            Wheel wheel = new Wheel(i_MaxAirPressure);
 
             switch (i_VehicleType)
             {

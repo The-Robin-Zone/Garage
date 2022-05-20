@@ -11,6 +11,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
     {
         protected float m_MaxEnergy;
         protected float m_CurrentEnergy;
+        protected float m_EnergyLeftPrcentage;
 
         public Engine(float i_MaxEnergy)
         {
@@ -51,8 +52,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string EngineDetails = string.Format("Engine:\nManufacture Name: {0}, Current Air Pressure: {1} Max Air Pressure: {1}",
-                e_EngineType, m_MaxEnergy, m_CurrentEnergy);
+            string EngineDetails = string.Format("Engine:\nMax Energy: {0} Current Energy: {1}, Energy Left Prcentage: {2}",
+                m_MaxEnergy, m_CurrentEnergy, m_EnergyLeftPrcentage);
 
             return EngineDetails;
         }
