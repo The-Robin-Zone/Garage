@@ -55,7 +55,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            return string.Format("Energy Left Prcentage: {0}", m_EnergyLeftPrcentage);
+            return string.Format("Energy Left: {0}% ", m_EnergyLeftPrcentage);
         }
     }
 }

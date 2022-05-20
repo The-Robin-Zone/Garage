@@ -22,7 +22,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         }
 
-        e_LicenseType LicenseType
+        public e_LicenseType LicenseType
         {
             get
             {
@@ -34,7 +34,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        int EngineVolume
+        public int EngineVolume
         {
             get
             {
@@ -44,6 +44,12 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 this.m_EngineVolume = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format(base.ToString() + "\nMotorcycle Details: \nLicenseType: {0}, EngineVolume: {1} cc",
+                m_LicenseType.ToString(), m_EngineVolume);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
 
             string i_LicenseNumber = "1992";
-            e_VehicleType i_VehicleType = e_VehicleType.Car;
+            e_VehicleType i_VehicleType = e_VehicleType.Truck;
             e_EngineType i_EngineType = e_EngineType.Fuel;
             e_FuelType? i_FuelType = e_FuelType.Octane95;
 
@@ -32,8 +32,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
             shaked.SetWheelsManufacture("Fanny wheels inc.");
             shaked.SetWheelsPSI(30);
 
-            shaked.Engine.CurrentEnergy = 10;
-        
+            shaked.Engine.CurrentEnergy = 2f;
+            (shaked as Truck).ContainedCoolCargo = true;
+            (shaked as Truck).TankVolume = 100;
 
             Console.WriteLine(shaked.ToString());
 

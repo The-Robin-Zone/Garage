@@ -30,7 +30,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {  
         }
 
-        e_ColorVehicle ColorVehicle
+        public e_ColorVehicle ColorVehicle
         {
             get
             {
@@ -42,7 +42,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        e_NumberOfDoors NumberOfDoors
+        public e_NumberOfDoors NumberOfDoors
         {
             get
             {
@@ -54,6 +54,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        
+        public override string ToString()
+        {
+            return string.Format(base.ToString() + "\nCar Details: \nVehicle Color: {0}, Number of doors: {1} ",
+                m_colorVehicle.ToString(), m_NumberOfDoors.ToString());
+        }
     }
 }
