@@ -13,19 +13,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
         protected float m_CurrentEnergy;
         protected float m_EnergyLeftPrcentage;
 
-        public Engine(float i_MaxEnergy)
+        public Engine()
         {
-            if (i_MaxEnergy <= 0)
-            {
-                // Throw exception
-            }
-
-            //if (i_MaxEnergy < i_CurrentEnergy)
-            //{
-            //    // Throw exception
-            //}
-
-            this.m_MaxEnergy = i_MaxEnergy;            
         }
 
         public float MaxEnergy

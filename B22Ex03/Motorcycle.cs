@@ -13,11 +13,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
     {
         private const int c_MaxAirPressure = 31;
         private const int c_NumberWheels = 2;
+        private const float c_MaxFuelTank = 38F;
+        private const float c_MaxBatteryLife = 3.3F;
         private e_LicenseType m_LicenseType;
         private int m_EngineVolume;
-        private Engine m_TypeEnergy;
-        public Motorcycle(string i_LicenseNumber)
-            : base(i_LicenseNumber, c_MaxAirPressure, c_NumberWheels)
+        public Motorcycle(string i_LicenseNumber, Engine i_Engine) : base(i_LicenseNumber, i_Engine, c_MaxAirPressure, c_NumberWheels, c_MaxFuelTank, c_MaxBatteryLife)
         { 
 
         }
@@ -45,19 +45,5 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 this.m_EngineVolume = value;
             }
         }
-
-        Engine TypeEnergy
-        {
-            get
-            {
-                return this.m_TypeEnergy;
-            }
-            set
-            {
-                this.m_TypeEnergy = value;
-            }
-        }
-
-
     }
 }
