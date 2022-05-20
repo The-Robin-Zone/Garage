@@ -13,7 +13,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             while (inGarageMenue)
             {
                 Output.MainOptions();
-                int UserChoice = Input.GetHomePageChoice();
+                int UserChoice = Input.GetUserOption(7);
 
                 switch (UserChoice)
                 {
@@ -56,14 +56,47 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public void InsertNewVehicle()
         {
-            Console.WriteLine("Insert New Vehicle...");
-            
+            string userLicenseNumber = string.Empty;
+            int userVehicleChoice;
+            Vehicle newVehicle = null;
+            e_VehicleType vehicleType;
+            e_EngineType engineType;
+            int i = 1;
+
+            // Prints available vehicle types
+            Console.WriteLine("These are the avilable types");
             foreach (SupportedVehicles cartype in this.m_garage.TypeOfVehicleHandle)
             {
-
+                Console.Write(i + ") ");
+                Console.WriteLine(cartype);
+                i++;
             }
 
-            Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Insert a license number:");
+            userLicenseNumber = Console.ReadLine();
+
+            if (m_garage.IsVehiculeInGarage(userLicenseNumber))
+            {
+                Console.WriteLine("Vehicle is already in the Garage, Chaning status to \"In-Repair\"...");
+                m_garage.UpdateStatus(userLicenseNumber, 1);
+            }
+            else
+            {
+                Console.WriteLine("Which vehicle would you like to make?");
+                userVehicleChoice = Input.GetUserOption(this.m_garage.TypeOfVehicleHandle.Count);
+
+
+                vehicleType = this.m_garage.TypeOfVehicleHandle[userVehicleChoice].VehicleType;
+                engineType = this.m_garage.TypeOfVehicleHandle[userVehicleChoice].EngineType;
+
+
+                newVehicle = Factory.CreateNewVehicle(userLicenseNumber, vehicleType, engineType, null);
+
+                Console.WriteLine(newVehicle);
+                Console.ReadLine();
+            }
+
             Console.Clear();
 
         }

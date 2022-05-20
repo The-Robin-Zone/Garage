@@ -42,5 +42,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 this.m_EngineType = value;
             }
         }
+
+        public override string ToString()
+        {
+            return string.Format("Vehicle type: {0}, Engine type: {1}",VehicleType, EngineType);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             Console.WriteLine("4) Refuel vehicle");
             Console.WriteLine("5) Recharge vehicle");
             Console.WriteLine("6) Display vehicle information");
-            Console.WriteLine("6) Exit System");
+            Console.WriteLine("7) Exit System");
             Console.WriteLine("you can type \"home\" at every stage to come back to this page.");
             Console.WriteLine();
 
@@ -32,7 +32,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             Console.WriteLine();
             Console.WriteLine("Thank you for using the garge managment system!");
             Console.WriteLine("See you next time");
-            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 }

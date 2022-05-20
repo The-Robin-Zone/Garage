@@ -3,7 +3,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 {
     public class Input
     {
-        public static int GetHomePageChoice()
+        public static int GetUserOption(int i_MaxValue)
         {
             string UserInput = string.Empty;
             int o_UserInput = 0;
@@ -17,7 +17,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
                 if (UserInput.Length == 1 && isInputInt)
                 {
-                    if (o_UserInput <= 7 && o_UserInput != 0)
+                    if (o_UserInput <= i_MaxValue && o_UserInput != 0)
                     {
                         isInputIllegal = false;
                     }
@@ -30,5 +30,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
             return o_UserInput;
         }
+
     }
 }
