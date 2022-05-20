@@ -23,6 +23,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 return this.m_MaxEnergy;
             }
+            set
+            {
+                this.m_MaxEnergy = value;
+            }
 
         }
 

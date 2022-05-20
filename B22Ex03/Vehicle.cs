@@ -13,12 +13,19 @@ namespace B22Ex03Shaked203943253Fanny337957633
         protected Wheel[] m_Wheels;
         protected Engine m_Engine;
 
-        public Vehicle(string i_LicenseNumber, Engine i_engine, float i_MaxAirPressure, int i_NumberWheels, float c_MaxFuelTank, float? c_MaxBatteryLife)
+        public Vehicle(string i_LicenseNumber, Engine i_engine, float i_MaxAirPressure, int i_NumberWheels, float i_MaxFuelTank, float? i_MaxBatteryLife)
         {
             this.m_LicenseNumber = i_LicenseNumber;
             this.m_VehicleInfo = new VehicleInfo();
             this.m_Wheels = new Wheel[i_NumberWheels];
             this.m_Engine = i_engine;
+            if (this.m_Engine is FuelEngine)
+            {
+                this.m_Engine.MaxEnergy = i_MaxFuelTank;
+            } else
+            {
+                this.m_Engine.MaxEnergy = (float)i_MaxBatteryLife;
+            }
             this.m_VehicleInfo = new VehicleInfo();
             for (int i = 0; i < i_NumberWheels; i++)
             {
@@ -45,7 +52,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 return this.m_LicenseNumber;
             }
         }
-
+         
         public float RemainingEnergy
         {
             get
