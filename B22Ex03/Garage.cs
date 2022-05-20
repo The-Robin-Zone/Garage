@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace B22Ex03Shaked203943253Fanny337957633
@@ -6,11 +7,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
     public class Garage
     {
         private Dictionary<string, Vehicle> m_Garage;
-        private List<SupportedVehicles> m_TypeOfVehicleHandle;
+        private ArrayList m_TypeOfVehicleHandle;
         public Garage()
         {
             this.m_Garage = new Dictionary<string, Vehicle>();
-            this.m_TypeOfVehicleHandle = new List<SupportedVehicles>();
+            this.m_TypeOfVehicleHandle = new ArrayList();
             typeOfSupportedVehicle();
         }
 
@@ -22,7 +23,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public List<SupportedVehicles> TypeOfVehicleHandle
+        public ArrayList TypeOfVehicleHandle
         {
             get
             {
@@ -53,12 +54,16 @@ namespace B22Ex03Shaked203943253Fanny337957633
         }
 
         // Display list of license number
-        public string AllVehiculesInGarage(string vehiculeStatus)
+        public string AllVehiculesInGarage(e_StatusVehicle i_vehiculeStatus)
         {
             string o_AllVehiculeInGarage = string.Empty;
             foreach (string licensedNumber in this.m_Garage.Keys)
             {
-                o_AllVehiculeInGarage += String.Format(" ", licensedNumber);
+                if (this.m_Garage[licensedNumber].VehicleInfo.StatusVehicule == i_vehiculeStatus)
+                {
+
+                }
+                o_AllVehiculeInGarage += String.Format("{0}\n", licensedNumber);
             }
             return o_AllVehiculeInGarage;
         }

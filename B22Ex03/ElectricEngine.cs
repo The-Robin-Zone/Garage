@@ -8,12 +8,18 @@ namespace B22Ex03Shaked203943253Fanny337957633
         // Electric engine constructor
         internal ElectricEngine() : base()
         {
-
         }
 
         public void Recharge(float i_NbrHoursToAdd)
         {
-            base.m_CurrentEnergy += i_NbrHoursToAdd;
+            if (i_NbrHoursToAdd < 0 || (this.m_CurrentEnergy + i_NbrHoursToAdd > base.m_MaxEnergy))
+            {
+                throw new ValueOutOfRangeException(base.m_MaxEnergy - this.CurrentEnergy, 0);
+            }
+            else
+            {
+                base.m_CurrentEnergy += i_NbrHoursToAdd;
+            }
         }
 
         public override string ToString()
