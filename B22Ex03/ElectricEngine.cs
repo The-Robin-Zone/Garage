@@ -21,7 +21,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 }
                 else
                 {
-                    base.m_CurrentEnergy += i_NbrOfMinutesToAdd;
+                    CurrentEnergy += i_NbrOfMinutesToAdd;
                 }
             }
             catch (ValueOutOfRangeException valueOutOfRangeException)
