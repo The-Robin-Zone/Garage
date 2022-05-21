@@ -45,7 +45,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 }
                 else
                 {
-                    base.m_CurrentEnergy += i_NbrFuelToAdd;
+                    CurrentEnergy += i_NbrFuelToAdd;
                 }
             }
             catch (ArgumentException argumentException)
