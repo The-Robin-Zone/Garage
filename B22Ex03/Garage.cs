@@ -52,19 +52,29 @@ namespace B22Ex03Shaked203943253Fanny337957633
             return o_IsVehiculeInGarage;
         }
 
-        // Display list of license number
-        public string AllVehiculesInGarage(e_StatusVehicle i_vehiculeStatus)
+        // Display list of license number with filter
+        public string AllLicensedNumber()
         {
             string o_AllVehiculeInGarage = string.Empty;
             foreach (string licensedNumber in this.m_Garage.Keys)
             {
-                if (this.m_Garage[licensedNumber].VehicleInfo.StatusVehicule == i_vehiculeStatus)
-                {
-
-                }
                 o_AllVehiculeInGarage += String.Format("{0}\n", licensedNumber);
             }
             return o_AllVehiculeInGarage;
+        }
+
+        // Display list of license number with filter
+        public string AllLicensedNumberByFilter(e_StatusVehicle i_vehiculeStatus)
+        {
+            string o_AllLicensedNumberByFilter = string.Empty;
+            foreach (string licensedNumber in this.m_Garage.Keys)
+            {
+                if (this.m_Garage[licensedNumber].VehicleInfo.StatusVehicule == i_vehiculeStatus)
+                {
+                    o_AllLicensedNumberByFilter += String.Format("{0}\n", licensedNumber);
+                }
+            }
+            return o_AllLicensedNumberByFilter;
         }
 
         public void UpdateStatus(string i_LicenseNumber, int i_NewStatus)
@@ -73,6 +83,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
             e_StatusVehicle newStatusVehicle = currentVehicule.VehicleInfo.UpdateStatusVehicule(i_NewStatus);
             currentVehicule.VehicleInfo.StatusVehicule = newStatusVehicle;
         }
+
+
 
         public void InflateWheels(string i_LicenseNumber, float i_NbrAirToAdd)
         {
