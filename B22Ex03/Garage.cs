@@ -89,10 +89,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
 
         // Add air to wheels
-        public void InflateWheels(string i_LicenseNumber, float i_NbrAirToAdd)
+        public void InflateWheels(string i_LicenseNumber)
         {
 
-            this.m_Garage[i_LicenseNumber].Inflate(i_NbrAirToAdd);
+            this.m_Garage[i_LicenseNumber].Inflate();
         }
 
         // Add fuel to FuelEngine

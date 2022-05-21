@@ -83,11 +83,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
         }
 
         // Inflate all tires
-        public void Inflate(float i_QuantityAirToAdd)
+        public void Inflate()
         {
             foreach(Wheel wheel in this.m_Wheels)
             {
-                wheel.CurrentAirPressure += i_QuantityAirToAdd;
+                wheel.Inflate();
             }
         }
 

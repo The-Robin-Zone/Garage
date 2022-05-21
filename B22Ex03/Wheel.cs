@@ -65,23 +65,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public void Inflate(float i_QuantityAirToAdd)
+        public void Inflate()
         {
-            try
-            {
-                if (i_QuantityAirToAdd < 0 || (i_QuantityAirToAdd + this.m_CurrentAirPressure) > this.MaxAirPressure)
-                {
-                    throw new ValueOutOfRangeException(0, this.MaxAirPressure - this.m_CurrentAirPressure);
-                }
-                else
-                {
-                    this.m_CurrentAirPressure += i_QuantityAirToAdd;
-                }
-            } catch (ValueOutOfRangeException valueOutOfRangeException)
-            {
-                Console.WriteLine(valueOutOfRangeException.Message);
-            }
-            
+            this.m_CurrentAirPressure = this.MaxAirPressure;
         }
 
         public override string ToString()
