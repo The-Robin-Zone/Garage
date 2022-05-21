@@ -3,10 +3,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
 {
     public enum e_FuelType
     {
-        Soler = 0,
-        Octane95 = 1,
-        Octane96 = 2,
-        Octane98 = 3
+        Soler = 1,
+        Octane95 = 2,
+        Octane96 = 3,
+        Octane98 = 4
     }
 
     internal class FuelEngine : Engine
