@@ -104,36 +104,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             return o_StatusVehiculeToString;
         }
 
-        // Check string contains only letters and space
-        private bool isOnlyLetterOrSpace(string i_NameTocheck)
-        {
-            bool o_isOnlyLetterOrSpace = true;
-            for (int i = 0; i < i_NameTocheck.Length; i++)
-            {
-                if (!((i_NameTocheck[i] >= 'a' && i_NameTocheck[i] <= 'z') || (i_NameTocheck[i] >= 'A' && i_NameTocheck[i] <= 'Z') || i_NameTocheck[i] == ' '))
-                {
-                    o_isOnlyLetterOrSpace = false;
-                    break;
-                }
-            }
-            return o_isOnlyLetterOrSpace;
-        }
-
-        // Check string contains only number
-        private bool isOnlyNumber(string i_NumberTocheck)
-        {
-            bool o_isOnlyNumber = true;
-            for (int i = 0; i < i_NumberTocheck.Length; i++)
-            {
-                if (!(i_NumberTocheck[i] >= '0' && i_NumberTocheck[i] <= '9'))
-                {
-                    o_isOnlyNumber = false;
-                    break;
-                }
-            }
-            return o_isOnlyNumber;
-        }
-
         public override string ToString()
         {
             string o_VehicleStatusDetails = string.Format("Vehicle info:\nOwner Name: {0}, Owner phone number: {1}, Vehicle Status: {2}",
