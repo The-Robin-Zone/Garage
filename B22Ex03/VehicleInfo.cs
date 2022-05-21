@@ -56,33 +56,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
         }
 
         // Change the status of the vehicule
-        public e_StatusVehicle UpdateStatusVehicule(int i_Status)
+        public void UpdateStatusVehicule(e_StatusVehicle i_Status)
         {
-            e_StatusVehicle statusVehicule = e_StatusVehicle.InRepair;
-            try
-            {
-                if (i_Status == 0)
-                {
-                    statusVehicule = e_StatusVehicle.InRepair;
-                }
-                else if (i_Status == 1)
-                {
-                    statusVehicule = e_StatusVehicle.Repaired;
-                }
-                else if (i_Status == 2)
-                {
-                    statusVehicule = e_StatusVehicle.PayedFor;
-                }
-                else
-                {
-                    throw new ArgumentException(string.Format("The status entered is not a legal one"));
-                }
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-            }
-            return statusVehicule;
+            this.m_StatusVehicule = i_Status;
         }
 
         // Return the string contain into the enum
