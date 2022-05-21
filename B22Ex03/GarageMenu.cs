@@ -121,6 +121,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             Output.VehiclesToDisplay();
 
             userVehicleChoice = Input.GetUserOption(4);
+            Console.WriteLine();
 
             switch (userVehicleChoice)
             {
@@ -144,6 +145,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
                     break;
 
             }
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
+            Console.Clear();
         }
 
             public void ChangeVehicleStatus()
@@ -187,9 +192,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
                     Console.WriteLine("Vehicle is not in the garage");
                 }
 
-                Console.ReadLine();
-                Console.Clear();
-            }
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
+            Console.Clear();
+        }
 
         public void InflateTires()
         {
@@ -209,6 +216,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 Console.WriteLine("Vehicle is not in the garage");
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
         }
@@ -250,6 +259,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 Console.WriteLine("Vehicle is not in the garage");
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
         }
@@ -288,6 +299,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 Console.WriteLine("Vehicle is not in the garage");
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
 
@@ -311,6 +324,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 Console.WriteLine("Vehicle is not in the garage");
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Clear();
         }
@@ -349,6 +364,9 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 ((Truck)m_Garage.VehiclesInGarage[i_LicenseNumber]).TankVolume = Input.GetUserFloat();
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.Clear();
 
         }

@@ -39,7 +39,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public static void VehiclesToDisplay()
         {
             Console.WriteLine();
-            Console.WriteLine("Which cars would you like to display?");
+            Console.WriteLine("Which vehicles would you like to display?");
             Console.WriteLine("1) All Vehicles in the garage");
             Console.WriteLine("2) In-Repair");
             Console.WriteLine("3) Repaired");
