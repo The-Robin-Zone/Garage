@@ -83,10 +83,8 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public void UpdateStatus(string i_LicenseNumber, e_StatusVehicle i_NewStatus)
         {
             Vehicle currentVehicule = this.m_Garage[i_LicenseNumber];
-            e_StatusVehicle newStatusVehicle = currentVehicule.VehicleInfo.UpdateStatusVehicule(i_NewStatus);
-            currentVehicule.VehicleInfo.StatusVehicule = newStatusVehicle;
+            currentVehicule.VehicleInfo.UpdateStatusVehicule(i_NewStatus);
         }
-
 
         // Add air to wheels
         public void InflateWheels(string i_LicenseNumber)
