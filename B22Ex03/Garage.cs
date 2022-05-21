@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+
 
 namespace B22Ex03Shaked203943253Fanny337957633
 {
@@ -53,25 +55,25 @@ namespace B22Ex03Shaked203943253Fanny337957633
         }
 
         // Display list of license number with filter
-        public string AllLicensedNumber()
+        public StringBuilder AllLicensedNumber()
         {
-            string o_AllVehiculeInGarage = string.Empty;
+            StringBuilder o_AllVehiculeInGarage = new StringBuilder();
             foreach (string licensedNumber in this.m_Garage.Keys)
             {
-                o_AllVehiculeInGarage += String.Format("{0}\n", licensedNumber);
+                o_AllVehiculeInGarage.AppendLine(licensedNumber);
             }
             return o_AllVehiculeInGarage;
         }
 
         // Display list of license number with filter
-        public string AllLicensedNumberByFilter(e_StatusVehicle i_vehiculeStatus)
+        public StringBuilder AllLicensedNumberByFilter(e_StatusVehicle i_vehiculeStatus)
         {
-            string o_AllLicensedNumberByFilter = string.Empty;
+            StringBuilder o_AllLicensedNumberByFilter = new StringBuilder();
             foreach (string licensedNumber in this.m_Garage.Keys)
             {
                 if (this.m_Garage[licensedNumber].VehicleInfo.StatusVehicule == i_vehiculeStatus)
                 {
-                    o_AllLicensedNumberByFilter += String.Format("{0}\n", licensedNumber);
+                    o_AllLicensedNumberByFilter.AppendLine(licensedNumber);
                 }
             }
             return o_AllLicensedNumberByFilter;
