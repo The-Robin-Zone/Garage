@@ -31,15 +31,30 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public void Refuel(float i_NbrFuelToAdd)
+        public void Refuel(e_FuelType i_FuelType, float i_NbrFuelToAdd)
         {
-            if (i_NbrFuelToAdd < 0 || (this.m_CurrentEnergy + i_NbrFuelToAdd > base.m_MaxEnergy))
+            try
             {
-                throw new ValueOutOfRangeException(base.m_MaxEnergy - this.CurrentEnergy, 0);
+                if (this.m_FuelType != i_FuelType)
+                {
+                    throw new ArgumentException(string.Format("Try to refuel with {0}, when the right type is {1}", i_FuelType.ToString(), this.m_FuelType.ToString()));
+                }
+                if (i_NbrFuelToAdd < 0 || (this.m_CurrentEnergy + i_NbrFuelToAdd > base.m_MaxEnergy))
+                {
+                    throw new ValueOutOfRangeException(0, base.m_MaxEnergy - this.CurrentEnergy);
+                }
+                else
+                {
+                    base.m_CurrentEnergy += i_NbrFuelToAdd;
+                }
             }
-            else
+            catch (ArgumentException argumentException)
             {
-                base.m_CurrentEnergy += i_NbrFuelToAdd;
+                Console.WriteLine(argumentException.Message);
+            }
+            catch (ValueOutOfRangeException valueOutOfRangeException)
+            {
+                Console.WriteLine(valueOutOfRangeException.Message);
             }
         } 
 

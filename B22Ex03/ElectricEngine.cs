@@ -12,13 +12,20 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public void Recharge(float i_NbrHoursToAdd)
         {
-            if (i_NbrHoursToAdd < 0 || (this.m_CurrentEnergy + i_NbrHoursToAdd > base.m_MaxEnergy))
+            try
             {
-                throw new ValueOutOfRangeException(base.m_MaxEnergy - this.CurrentEnergy, 0);
+                if (i_NbrHoursToAdd < 0 || (this.m_CurrentEnergy + i_NbrHoursToAdd > base.m_MaxEnergy))
+                {
+                    throw new ValueOutOfRangeException(0, base.m_MaxEnergy - this.CurrentEnergy);
+                }
+                else
+                {
+                    base.m_CurrentEnergy += i_NbrHoursToAdd;
+                }
             }
-            else
+            catch (ValueOutOfRangeException valueOutOfRangeException)
             {
-                base.m_CurrentEnergy += i_NbrHoursToAdd;
+                Console.WriteLine(valueOutOfRangeException.Message);
             }
         }
 
