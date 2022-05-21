@@ -101,7 +101,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 // Initialize vehicle fields
                 VehicleInfoUpdate(userLicenseNumber);
 
-                Console.WriteLine("The vehicle was succesfully added to the Garge!");
+                Console.WriteLine("The vehicle was succesfully added to the Garage!");
 
                 Console.WriteLine();
                 Console.WriteLine(newVehicle);
@@ -165,23 +165,26 @@ namespace B22Ex03Shaked203943253Fanny337957633
                     {
                         case 1:
                             this.m_Garage.UpdateStatus(userInput, e_StatusVehicle.InRepair);
+                            Console.WriteLine("Status Changed");
                             break;
 
                         case 2:
                             this.m_Garage.UpdateStatus(userInput, e_StatusVehicle.Repaired);
+                            Console.WriteLine("Status Changed");
                             break;
 
                         case 3:
                             this.m_Garage.UpdateStatus(userInput, e_StatusVehicle.PayedFor);
+                            Console.WriteLine("Status Changed");
                             break;
 
                         default:
                             break;
                     }
-            }
+                }
                 else
                 {
-                    Console.WriteLine("Vehicle is not in the garge");
+                    Console.WriteLine("Vehicle is not in the garage");
                 }
 
                 Console.ReadLine();
@@ -199,10 +202,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
             if (isVehicleinGarage)
             {
                 this.m_Garage.InflateWheels(userInput);
+                Console.WriteLine("Tires were inlated");
             }
             else
             {
-                Console.WriteLine("Vehicle is not in the garge");
+                Console.WriteLine("Vehicle is not in the garage");
             }
 
             Console.ReadLine();
@@ -227,10 +231,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 Console.WriteLine("Which fuel type would you like to fill?");
                 fuelType = Input.GetUserFuelType();
                 this.m_Garage.Refuel(userLicensePlate, (e_FuelType)fuelType, fuelToAdd);
+                Console.WriteLine("Vehicle refuled");
             }
             else
             {
-                Console.WriteLine("Vehicle is not in the garge");
+                Console.WriteLine("Vehicle is not in the garage");
             }
 
             Console.ReadLine();
@@ -252,10 +257,11 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 Console.WriteLine("How many minutes would you like to charge?");
                 energyToAdd = Input.GetUserFloat();
                 this.m_Garage.Recharge(userLicensePlate, energyToAdd);
+                Console.WriteLine("Vehicle Recharged");
             }
             else
             {
-                Console.WriteLine("Vehicle is not in the garge");
+                Console.WriteLine("Vehicle is not in the garage");
             }
 
             Console.ReadLine();
@@ -278,7 +284,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
             else
             {
-                Console.WriteLine("Vehicle is not in the garge");
+                Console.WriteLine("Vehicle is not in the garage");
             }
 
             Console.ReadLine();
@@ -287,35 +293,35 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public void VehicleInfoUpdate(string i_LicenseNumber)
         {
-            Console.WriteLine("Inseret Model name:");
+            Console.WriteLine("Insert Model name:");
             m_Garage.VehiclesInGarage[i_LicenseNumber].ModelName = Console.ReadLine();
-            Console.WriteLine("Inseret owner name:");
+            Console.WriteLine("Insert owner name:");
             m_Garage.VehiclesInGarage[i_LicenseNumber].VehicleInfo.OwnerName = Console.ReadLine();
-            Console.WriteLine("Inseret Owner Phone Number name:");
+            Console.WriteLine("Insert Owner Phone Number name:");
             m_Garage.VehiclesInGarage[i_LicenseNumber].VehicleInfo.OwnerPhoneNumber = Console.ReadLine();
-            Console.WriteLine("Inseret Wheel Manuufacturer name:");
+            Console.WriteLine("Insert Wheel Manuufacturer name:");
             m_Garage.VehiclesInGarage[i_LicenseNumber].SetWheelsManufacture(Console.ReadLine());
 
 
             if (m_Garage.VehiclesInGarage[i_LicenseNumber] is Motorcycle)
             {
-                Console.WriteLine("Inseret License Type:");
+                Console.WriteLine("Insert License Type:");
                 ((Motorcycle)m_Garage.VehiclesInGarage[i_LicenseNumber]).LicenseType = Input.GetUserLicenseType();
-                Console.WriteLine("Inseret Engine Volume:");
+                Console.WriteLine("Insert Engine Volume:");
                 ((Motorcycle)m_Garage.VehiclesInGarage[i_LicenseNumber]).EngineVolume = Input.GetUserInt();
             }
             if (m_Garage.VehiclesInGarage[i_LicenseNumber] is Car)
             {
-                Console.WriteLine("Inseret Vehicle Color:");
+                Console.WriteLine("Insert Vehicle Color:");
                 ((Car)m_Garage.VehiclesInGarage[i_LicenseNumber]).ColorVehicle = Input.GetUserVehicleColor();
-                Console.WriteLine("Inseret Number of Doors:");
+                Console.WriteLine("Insert Number of Doors:");
                 ((Car)m_Garage.VehiclesInGarage[i_LicenseNumber]).NumberOfDoors = Input.GetUserNumberOfDoors();
             }
             if (m_Garage.VehiclesInGarage[i_LicenseNumber] is Truck)
             {
                 Console.WriteLine("Does truck contain cooled cargo?:");
                 ((Truck)m_Garage.VehiclesInGarage[i_LicenseNumber]).ContainedCoolCargo = Input.GetUserBool();
-                Console.WriteLine("Inseret Tank Volume:");
+                Console.WriteLine("Insert Tank Volume:");
                 ((Truck)m_Garage.VehiclesInGarage[i_LicenseNumber]).TankVolume = Input.GetUserFloat();
             }
 
