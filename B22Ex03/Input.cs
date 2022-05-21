@@ -150,5 +150,21 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
             return o_UserInput;
         }
+
+        public static e_FuelType GetUserFuelType()
+        {
+            int userInput;
+
+            string[] FuelTypeArray = Enum.GetNames(typeof(e_FuelType));
+
+            for (int i = 0; i < FuelTypeArray.Length; i++)
+            {
+                Console.WriteLine((i + 1) + ") " + FuelTypeArray[i]);
+            }
+
+            userInput = GetUserOption(FuelTypeArray.Length);
+
+            return (e_FuelType)(userInput);
+        }
     }
 }

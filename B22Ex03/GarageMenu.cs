@@ -3,7 +3,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 {
     internal class GarageMenu
     {
-        Garage m_garage = new Garage();
+        Garage m_Garage = new Garage();
         bool inGarageMenue;
 
         public void OpenGarageMenu()
@@ -13,7 +13,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             while (inGarageMenue)
             {
                 Output.MainOptions();
-                int UserChoice = Input.GetUserOption(7);
+                int UserChoice = Input.GetUserOption(8);
 
                 switch (UserChoice)
                 {
@@ -26,22 +26,26 @@ namespace B22Ex03Shaked203943253Fanny337957633
                         break;
 
                     case 3:
-                        InflateTires();
+                        ChangeVehicleStatus();
                         break;
 
                     case 4:
-                        RefuelVehicle();
+                        InflateTires();
                         break;
 
                     case 5:
-                        RechargeVehicle();
+                        RefuelVehicle();
                         break;
 
                     case 6:
-                        DisplayVehicleInfo();
+                        RechargeVehicle();
                         break;
 
                     case 7:
+                        DisplayVehicleInfo();
+                        break;
+
+                    case 8:
                         Output.ExitProgPromt();
                         Environment.Exit(0);
                         break;
@@ -63,7 +67,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
             // Prints available vehicle types
             Console.WriteLine("These are the available types");
-            foreach (SupportedVehicles cartype in this.m_garage.TypeOfVehicleHandle)
+            foreach (SupportedVehicles cartype in this.m_Garage.TypeOfVehicleHandle)
             {
                 Console.Write(i + ") ");
                 Console.WriteLine(cartype);
@@ -75,24 +79,24 @@ namespace B22Ex03Shaked203943253Fanny337957633
             userLicenseNumber = Console.ReadLine();
 
             // Vehicle already exists in garage
-            if (m_garage.IsVehiculeInGarage(userLicenseNumber))
+            if (m_Garage.IsVehiculeInGarage(userLicenseNumber))
             {
                 Console.WriteLine("Vehicle is already in the Garage, Chaning status to \"In-Repair\"...");
-                m_garage.UpdateStatus(userLicenseNumber, 1);
+                m_Garage.UpdateStatus(userLicenseNumber, e_StatusVehicle.InRepair);
                 Console.ReadLine();
             }
             // Create a new vehicle and add to garage
             else
             {
                 Console.WriteLine("Which vehicle would you like to make? (enter a number from available vehicles)");
-                userVehicleChoice = Input.GetUserOption(this.m_garage.TypeOfVehicleHandle.Count);
+                userVehicleChoice = Input.GetUserOption(this.m_Garage.TypeOfVehicleHandle.Count);
 
                 newVehicle = Factory.CreateNewVehicle(userLicenseNumber,
-                    this.m_garage.TypeOfVehicleHandle[userVehicleChoice - 1].VehicleType,
-                    this.m_garage.TypeOfVehicleHandle[userVehicleChoice - 1].EngineType);
+                    this.m_Garage.TypeOfVehicleHandle[userVehicleChoice - 1].VehicleType,
+                    this.m_Garage.TypeOfVehicleHandle[userVehicleChoice - 1].EngineType);
 
 
-                this.m_garage.AddNewVehicule(userLicenseNumber, newVehicle);
+                this.m_Garage.AddNewVehicule(userLicenseNumber, newVehicle);
 
                 // Initialize vehicle fields
                 VehicleInfoUpdate(userLicenseNumber);
@@ -110,57 +114,173 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         }
 
-        public static void DisplayLicenseNumbers()
+        public void DisplayLicenseNumbers()
         {
-            Console.WriteLine("Display License Numbers...");
-            // ask user if he want to see:
-            // 1. all license numbers
-            // 2. in repair
-            // 3. repaired
-            // 4. in repair
-            // 5. payed for
-            // iterate through the hash table and print 
-            // 
+            int userVehicleChoice;
+
+            Output.VehiclesToDisplay();
+
+            userVehicleChoice = Input.GetUserOption(4);
+
+            switch (userVehicleChoice)
+            {
+                case 1:
+                    Console.WriteLine(this.m_Garage.AllLicensedNumber());
+                    break;
+
+                case 2:
+                    Console.WriteLine(this.m_Garage.AllLicensedNumberByFilter(e_StatusVehicle.InRepair));
+                    break;
+
+                case 3:
+                    Console.WriteLine(this.m_Garage.AllLicensedNumberByFilter(e_StatusVehicle.Repaired));
+                    break;
+
+                case 4:
+                    Console.WriteLine(this.m_Garage.AllLicensedNumberByFilter(e_StatusVehicle.PayedFor));
+                    break;
+
+                default:
+                    break;
+
+            }
+        }
+
+            public void ChangeVehicleStatus()
+            {
+                string userInput = string.Empty;
+                int userVehicleChoice;
+                bool isVehicleinGarage;
+                Console.WriteLine("Enter a license number:");
+                userInput = Console.ReadLine();
+                isVehicleinGarage = this.m_Garage.IsVehiculeInGarage(userInput);
+
+                if (isVehicleinGarage)
+                {
+                    Console.WriteLine("To which status would you like to change the vehicle?");
+                    Output.VehiclesStatus();
+                    userVehicleChoice = Input.GetUserOption(3);
+
+                    switch (userVehicleChoice)
+                    {
+                        case 1:
+                            this.m_Garage.UpdateStatus(userInput, e_StatusVehicle.InRepair);
+                            break;
+
+                        case 2:
+                            this.m_Garage.UpdateStatus(userInput, e_StatusVehicle.Repaired);
+                            break;
+
+                        case 3:
+                            this.m_Garage.UpdateStatus(userInput, e_StatusVehicle.PayedFor);
+                            break;
+
+                        default:
+                            break;
+                    }
+            }
+                else
+                {
+                    Console.WriteLine("Vehicle is not in the garge");
+                }
+
+                Console.ReadLine();
+                Console.Clear();
+            }
+
+        public void InflateTires()
+        {
+            string userInput = string.Empty;
+            bool isVehicleinGarage;
+            Console.WriteLine("Enter a vehicle license number to inflate tires:");
+            userInput = Console.ReadLine();
+            isVehicleinGarage = this.m_Garage.IsVehiculeInGarage(userInput);
+
+            if (isVehicleinGarage)
+            {
+                this.m_Garage.InflateWheels(userInput);
+            }
+            else
+            {
+                Console.WriteLine("Vehicle is not in the garge");
+            }
+
             Console.ReadLine();
             Console.Clear();
         }
 
-        public static void InflateTires()
+        public void RefuelVehicle()
         {
-            Console.WriteLine("Inflate Tires...");
-            // ask user for a license number
-            // check license number exists
-            // inflate tire if doesnt exceed max psi
+            string userLicensePlate = string.Empty;
+            bool isVehicleinGarage;
+            float fuelToAdd;
+            e_FuelType fuelType;
+
+            Console.WriteLine("Enter a vehicle license number to refuel:");
+            userLicensePlate = Console.ReadLine();
+            isVehicleinGarage = this.m_Garage.IsVehiculeInGarage(userLicensePlate);
+
+            if (isVehicleinGarage)
+            {
+                Console.WriteLine("How much fuel would you like to fill?");
+                fuelToAdd = Input.GetUserFloat();
+                Console.WriteLine("Which fuel type would you like to fill?");
+                fuelType = Input.GetUserFuelType();
+                this.m_Garage.Refuel(userLicensePlate, (e_FuelType)fuelType, fuelToAdd);
+            }
+            else
+            {
+                Console.WriteLine("Vehicle is not in the garge");
+            }
+
             Console.ReadLine();
             Console.Clear();
         }
 
-        public static void RefuelVehicle()
+        public void RechargeVehicle()
         {
-            Console.WriteLine("Refuel Vehicle...");
-            // ask user for a license number, fuel type, amount to fill
-            // check license number exists
-            // check fuel match
-            // check amount doesnt exceeds max capacity if yes fill to max
-            // fill
+            string userLicensePlate = string.Empty;
+            bool isVehicleinGarage;
+            float energyToAdd;
+            
+            Console.WriteLine("Enter a vehicle license number to recharge:");
+            userLicensePlate = Console.ReadLine();
+            isVehicleinGarage = this.m_Garage.IsVehiculeInGarage(userLicensePlate);
+
+            if (isVehicleinGarage)
+            {
+                Console.WriteLine("How many minutes would you like to charge?");
+                energyToAdd = Input.GetUserFloat();
+                this.m_Garage.Recharge(userLicensePlate, energyToAdd);
+            }
+            else
+            {
+                Console.WriteLine("Vehicle is not in the garge");
+            }
+
             Console.ReadLine();
             Console.Clear();
+
         }
 
-        public static void RechargeVehicle()
+        public void DisplayVehicleInfo()
         {
-            Console.WriteLine("Recharge Vehicle...");
-            // ask user for a license number and number of minutes to charge
-            // check license number exists
-            // check amount of minutes dont exceeds max capacity, if yes than charge max
-            Console.ReadLine();
-            Console.Clear();
-        }
+            string userLicensePlate = string.Empty;
+            bool isVehicleinGarage;
 
-        public static void DisplayVehicleInfo()
-        {
-            Console.WriteLine("Display Vehicle Info...");
-            // iterate through the hash map and call ToSting method on each vehicle
+            Console.WriteLine("Enter a license number:");
+            userLicensePlate = Console.ReadLine();
+            isVehicleinGarage = this.m_Garage.IsVehiculeInGarage(userLicensePlate);
+
+            if (isVehicleinGarage)
+            {
+                Console.WriteLine(this.m_Garage.VehiclesInGarage[userLicensePlate]);
+            }
+            else
+            {
+                Console.WriteLine("Vehicle is not in the garge");
+            }
+
             Console.ReadLine();
             Console.Clear();
         }
@@ -168,37 +288,35 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public void VehicleInfoUpdate(string i_LicenseNumber)
         {
             Console.WriteLine("Inseret Model name:");
-            m_garage.VehiclesInGarage[i_LicenseNumber].ModelName = Console.ReadLine();
+            m_Garage.VehiclesInGarage[i_LicenseNumber].ModelName = Console.ReadLine();
             Console.WriteLine("Inseret owner name:");
-            m_garage.VehiclesInGarage[i_LicenseNumber].VehicleInfo.OwnerName = Console.ReadLine();
+            m_Garage.VehiclesInGarage[i_LicenseNumber].VehicleInfo.OwnerName = Console.ReadLine();
             Console.WriteLine("Inseret Owner Phone Number name:");
-            m_garage.VehiclesInGarage[i_LicenseNumber].VehicleInfo.OwnerPhoneNumber = Console.ReadLine();
+            m_Garage.VehiclesInGarage[i_LicenseNumber].VehicleInfo.OwnerPhoneNumber = Console.ReadLine();
             Console.WriteLine("Inseret Wheel Manuufacturer name:");
-            m_garage.VehiclesInGarage[i_LicenseNumber].SetWheelsManufacture(Console.ReadLine());
+            m_Garage.VehiclesInGarage[i_LicenseNumber].SetWheelsManufacture(Console.ReadLine());
 
 
-
-
-            if (m_garage.VehiclesInGarage[i_LicenseNumber] is Motorcycle)
+            if (m_Garage.VehiclesInGarage[i_LicenseNumber] is Motorcycle)
             {
                 Console.WriteLine("Inseret License Type:");
-                ((Motorcycle)m_garage.VehiclesInGarage[i_LicenseNumber]).LicenseType = Input.GetUserLicenseType();
+                ((Motorcycle)m_Garage.VehiclesInGarage[i_LicenseNumber]).LicenseType = Input.GetUserLicenseType();
                 Console.WriteLine("Inseret Engine Volume:");
-                ((Motorcycle)m_garage.VehiclesInGarage[i_LicenseNumber]).EngineVolume = Input.GetUserInt();
+                ((Motorcycle)m_Garage.VehiclesInGarage[i_LicenseNumber]).EngineVolume = Input.GetUserInt();
             }
-            if (m_garage.VehiclesInGarage[i_LicenseNumber] is Car)
+            if (m_Garage.VehiclesInGarage[i_LicenseNumber] is Car)
             {
                 Console.WriteLine("Inseret Vehicle Color:");
-                ((Car)m_garage.VehiclesInGarage[i_LicenseNumber]).ColorVehicle = Input.GetUserVehicleColor();
+                ((Car)m_Garage.VehiclesInGarage[i_LicenseNumber]).ColorVehicle = Input.GetUserVehicleColor();
                 Console.WriteLine("Inseret Number of Doors:");
-                ((Car)m_garage.VehiclesInGarage[i_LicenseNumber]).NumberOfDoors = Input.GetUserNumberOfDoors();
+                ((Car)m_Garage.VehiclesInGarage[i_LicenseNumber]).NumberOfDoors = Input.GetUserNumberOfDoors();
             }
-            if (m_garage.VehiclesInGarage[i_LicenseNumber] is Truck)
+            if (m_Garage.VehiclesInGarage[i_LicenseNumber] is Truck)
             {
                 Console.WriteLine("Does truck contain cooled cargo?:");
-                ((Truck)m_garage.VehiclesInGarage[i_LicenseNumber]).ContainedCoolCargo = Input.GetUserBool();
+                ((Truck)m_Garage.VehiclesInGarage[i_LicenseNumber]).ContainedCoolCargo = Input.GetUserBool();
                 Console.WriteLine("Inseret Tank Volume:");
-                ((Truck)m_garage.VehiclesInGarage[i_LicenseNumber]).TankVolume = Input.GetUserFloat();
+                ((Truck)m_Garage.VehiclesInGarage[i_LicenseNumber]).TankVolume = Input.GetUserFloat();
             }
 
             Console.Clear();
