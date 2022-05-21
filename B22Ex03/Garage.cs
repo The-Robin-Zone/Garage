@@ -96,40 +96,29 @@ namespace B22Ex03Shaked203943253Fanny337957633
         // Add fuel to FuelEngine
         public void Refuel(string i_LicensedNumber, e_FuelType i_FuelType, float i_AmountToFill)
         {
-            try
+
+            if (this.m_Garage[i_LicensedNumber].Engine is FuelEngine)
             {
-                if (this.m_Garage[i_LicensedNumber].Engine is FuelEngine)
-                {
-                    (this.m_Garage[i_LicensedNumber].Engine as FuelEngine).Refuel(i_FuelType, i_AmountToFill);
-                }
-                else
-                {
-                    throw new ArgumentException("Try to add energy to the wrong type of vehicle");
-                }
+                (this.m_Garage[i_LicensedNumber].Engine as FuelEngine).Refuel(i_FuelType, i_AmountToFill);
             }
-            catch (ArgumentException argumentException)
+            else
             {
-                Console.WriteLine(argumentException.Message);
+                throw new ArgumentException("Try to add energy to the wrong type of vehicle");
             }
+
         }
 
         // Ass Electricity to ElectricEngine
         public void Recharge(string i_LicensedNumber, float i_TimeToRecharge)
         {
-            try
+            
+            if (this.m_Garage[i_LicensedNumber].Engine is ElectricEngine)
             {
-                if (this.m_Garage[i_LicensedNumber].Engine is ElectricEngine)
-                {
-                    (this.m_Garage[i_LicensedNumber].Engine as ElectricEngine).Recharge(i_TimeToRecharge);
-                }
-                else
-                {
-                    throw new ArgumentException("Try to add energy to the wrong type of vehicle");
-                }
+                (this.m_Garage[i_LicensedNumber].Engine as ElectricEngine).Recharge(i_TimeToRecharge);
             }
-            catch (ArgumentException argumentException)
+            else
             {
-                Console.WriteLine(argumentException.Message);
+                throw new ArgumentException("Try to add energy to the wrong type of vehicle");
             }
         }
     }

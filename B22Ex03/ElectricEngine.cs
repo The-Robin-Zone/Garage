@@ -10,23 +10,17 @@ namespace B22Ex03Shaked203943253Fanny337957633
         {
         }
 
+        // Recharge vehicle if the 
         public void Recharge(float i_NbrOfMinutesToAdd)
         {
-            try
-            {
 
-                if (i_NbrOfMinutesToAdd < 0 || (this.m_CurrentEnergy + i_NbrOfMinutesToAdd > base.m_MaxEnergy))
-                {
-                    throw new ValueOutOfRangeException(0, base.m_MaxEnergy - this.CurrentEnergy);
-                }
-                else
-                {
-                    CurrentEnergy += i_NbrOfMinutesToAdd;
-                }
-            }
-            catch (ValueOutOfRangeException valueOutOfRangeException)
+            if (i_NbrOfMinutesToAdd < 0 || (this.m_CurrentEnergy + i_NbrOfMinutesToAdd > base.m_MaxEnergy))
             {
-                Console.WriteLine(valueOutOfRangeException.Message);
+                throw new ValueOutOfRangeException(0, base.m_MaxEnergy - this.CurrentEnergy);
+            }
+            else
+            {
+                CurrentEnergy += i_NbrOfMinutesToAdd;
             }
         }
 
