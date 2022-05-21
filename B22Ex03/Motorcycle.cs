@@ -49,7 +49,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            return string.Format(base.ToString() + "\nMotorcycle Details: \nLicenseType: {0}, EngineVolume: {1} cc",
+            return string.Format(base.ToString() + Environment.NewLine + "Motorcycle Details: " + Environment.NewLine + "LicenseType: {0}, EngineVolume: {1} cc",
                 m_LicenseType.ToString(), m_EngineVolume);
         }
     }

@@ -41,7 +41,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            return string.Format(base.ToString() + "\nTruck Details: \nConatins cooled cargo: {0}, Tank Volume: {1} ",
+            return string.Format(base.ToString() + Environment.NewLine + "Truck Details: " + Environment.NewLine + "Conatins cooled cargo: {0}, Tank Volume: {1} ",
                 m_ContainedCoolCargo, m_TankVolume);
 
         }

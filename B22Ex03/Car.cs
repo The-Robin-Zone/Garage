@@ -57,7 +57,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            return string.Format(base.ToString() + "\nCar Details: \nVehicle Color: {0}, Number of doors: {1} ",
+            return string.Format(base.ToString() + Environment.NewLine + "Car Details: " + Environment.NewLine + "Vehicle Color: {0}, Number of doors: {1} ",
                 m_colorVehicle.ToString(), m_NumberOfDoors.ToString());
         }
     }

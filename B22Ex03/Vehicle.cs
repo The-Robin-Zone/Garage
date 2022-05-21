@@ -111,7 +111,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public override string ToString()
         {
-            string o_VehicleDetails = string.Format("Vehicle Details:\nModel Name: {0}, License Number: {1}\n{2}\n{3}, \nEngine Details: \n{4} ",
+            string o_VehicleDetails = string.Format("Vehicle Details:" + Environment.NewLine + "Model Name: {0}, License Number: {1}" + Environment.NewLine + "{2}" + Environment.NewLine + "{3}, " + Environment.NewLine + "Engine Details: " + Environment.NewLine + "{4} ",
                  m_ModelName, m_LicenseNumber, this.m_VehicleInfo.ToString(), this.m_Wheels[0].ToString(), this.m_Engine.ToString());
 
             return o_VehicleDetails;
