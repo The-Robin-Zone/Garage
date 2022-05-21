@@ -22,7 +22,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         private const int c_MaxAirPressure = 29;
         private const int c_NumberWheels = 4;
         private const float c_MaxFuelTank = 38F;
-        private const float c_MaxBatteryLife = 3.3F;
+        private const float c_MaxBatteryLife = 198F;
         private const e_FuelType c_FuelType = e_FuelType.Octane95;
         private e_ColorVehicle m_colorVehicle;
         private e_NumberOfDoors m_NumberOfDoors;

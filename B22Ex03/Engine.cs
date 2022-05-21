@@ -44,7 +44,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
         }
 
-        public float EnergyLeftPrcentage
+        public float EnergyLeftPercentage
         {
             get
             {

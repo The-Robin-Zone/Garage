@@ -283,7 +283,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
             }
 
             Output.EndOperationPrompt();
-
         }
 
         public void DisplayVehicleInfo()

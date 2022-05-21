@@ -13,10 +13,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
         // Recharge vehicle if the 
         public void Recharge(float i_NbrOfMinutesToAdd)
         {
-
             if (i_NbrOfMinutesToAdd < 0 || (this.m_CurrentEnergy + i_NbrOfMinutesToAdd > base.m_MaxEnergy))
             {
-                throw new ValueOutOfRangeException(0, base.m_MaxEnergy - this.CurrentEnergy);
+                string message = "Value is out of range, the range is {0} to {1} minutes";
+                throw new ValueOutOfRangeException(0, base.m_MaxEnergy - this.CurrentEnergy, message);
             }
             else
             {
@@ -27,7 +27,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
         public override string ToString()
         {
 
-            return string.Format(base.ToString() + ", Max Battery: {0} hours, Current Battery: {1} hours ", base.MaxEnergy, base.CurrentEnergy);
+            return string.Format(base.ToString() + ", Max Battery: {0} hours, Current Battery: {1} hours ", base.MaxEnergy / 60, (base.CurrentEnergy / 60).ToString("0.00"));
         }
 
     }
