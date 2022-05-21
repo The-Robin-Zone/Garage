@@ -10,16 +10,6 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
         public Wheel(float i_MaxAirPressure)
         {
-            //if (i_CurrentAirPressure < 0 || i_MaxAirPressure <= 0)
-            //{
-            //    // Throw exception
-            //}
-
-            //if (i_CurrentAirPressure > i_MaxAirPressure)
-            //{
-            //    // Throw exception
-            //}
-
             this.r_MaxAirPressure = i_MaxAirPressure;
         }
 
