@@ -11,10 +11,10 @@ namespace B22Ex03Shaked203943253Fanny337957633
 
     public enum e_NumberOfDoors
     {
-        Two = 2,
-        Three = 3,
-        Foor = 4,
-        Five = 5
+        Two = 1,
+        Three = 2,
+        Foor = 3,
+        Five = 4
     }
 
     public class Car : Vehicle
