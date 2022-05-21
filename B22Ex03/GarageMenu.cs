@@ -202,7 +202,7 @@ namespace B22Ex03Shaked203943253Fanny337957633
             if (isVehicleinGarage)
             {
                 this.m_Garage.InflateWheels(userInput);
-                Console.WriteLine("Tires were inlated");
+                Console.WriteLine("Tires were inlated!");
             }
             else
             {
@@ -230,8 +230,20 @@ namespace B22Ex03Shaked203943253Fanny337957633
                 fuelToAdd = Input.GetUserFloat();
                 Console.WriteLine("Which fuel type would you like to fill?");
                 fuelType = Input.GetUserFuelType();
-                this.m_Garage.Refuel(userLicensePlate, (e_FuelType)fuelType, fuelToAdd);
-                Console.WriteLine("Vehicle refuled");
+                try
+                {
+                    this.m_Garage.Refuel(userLicensePlate, (e_FuelType)fuelType, fuelToAdd);
+                    Console.WriteLine("Vehicle refuled!");
+                }
+                catch (ArgumentException argumentException)
+                {
+                    Console.WriteLine(argumentException.Message);
+                }
+                catch (ValueOutOfRangeException valueOutOfRangeException)
+                {
+                    Console.WriteLine(valueOutOfRangeException.Message);
+                }
+
             }
             else
             {
@@ -256,8 +268,20 @@ namespace B22Ex03Shaked203943253Fanny337957633
             {
                 Console.WriteLine("How many minutes would you like to charge?");
                 energyToAdd = Input.GetUserFloat();
-                this.m_Garage.Recharge(userLicensePlate, energyToAdd);
-                Console.WriteLine("Vehicle Recharged");
+                try
+                {
+                    this.m_Garage.Recharge(userLicensePlate, energyToAdd);
+                    Console.WriteLine("Vehicle recharged!");
+                }
+                catch (ValueOutOfRangeException valueOutOfRangeException)
+                {
+                    Console.WriteLine(valueOutOfRangeException.Message);
+                }
+                catch (ArgumentException argumentException)
+                {
+                    Console.WriteLine(argumentException.Message);
+                }
+
             }
             else
             {
